@@ -1,0 +1,108 @@
+{
+  "package": "@lobehub/icons-static-svg",
+  "version": "1.104.0",
+  "package_registry_url": "https://registry.npmjs.org/@lobehub/icons-static-svg",
+  "git_repository": "https://github.com/lobehub/lobe-icons",
+  "git_commit": "5c966bad55cda839d0db663e02a2df169003ff4e",
+  "license": "MIT",
+  "license_file": "LICENSE-lobehub.txt",
+  "license_source": "https://raw.githubusercontent.com/lobehub/lobe-icons/master/LICENSE",
+  "assets": [
+    {
+      "file": "bedrock.svg",
+      "bytes": 2270,
+      "sha256": "a149a5678ce2b5d821759aabca7b815867027a8231a76723b3673580e8177a60",
+      "source_package_path": "@lobehub/icons-static-svg@1.104.0/icons/bedrock.svg",
+      "source_url": "https://unpkg.com/@lobehub/icons-static-svg@1.104.0/icons/bedrock.svg",
+      "checks": {
+        "xml_valid": true,
+        "script_tags": false,
+        "event_handlers": false,
+        "external_references": false
+      }
+    },
+    {
+      "file": "claude.svg",
+      "bytes": 1696,
+      "sha256": "a3101f3047a119aa11825ad9369510f0c472428c8c52d420e31bc62db44a8364",
+      "source_package_path": "@lobehub/icons-static-svg@1.104.0/icons/claude.svg",
+      "source_url": "https://unpkg.com/@lobehub/icons-static-svg@1.104.0/icons/claude.svg",
+      "checks": {
+        "xml_valid": true,
+        "script_tags": false,
+        "event_handlers": false,
+        "external_references": false
+      }
+    },
+    {
+      "file": "gemini.svg",
+      "bytes": 2836,
+      "sha256": "8ab0a9bafec11f7e69bcb9fc4ffd8f1bc927d1ddcbbb6ff36dee5ae8b5a9d602",
+      "source_package_path": "@lobehub/icons-static-svg@1.104.0/icons/gemini.svg",
+      "source_url": "https://unpkg.com/@lobehub/icons-static-svg@1.104.0/icons/gemini.svg",
+      "checks": {
+        "xml_valid": true,
+        "script_tags": false,
+        "event_handlers": false,
+        "external_references": false
+      }
+    },
+    {
+      "file": "mcp.svg",
+      "bytes": 978,
+      "sha256": "8670df38c9558de3cdd98d8b39ee6cbaf1c929377cffc5952e9b02f9bf9429b3",
+      "source_package_path": "@lobehub/icons-static-svg@1.104.0/icons/mcp.svg",
+      "source_url": "https://unpkg.com/@lobehub/icons-static-svg@1.104.0/icons/mcp.svg",
+      "checks": {
+        "xml_valid": true,
+        "script_tags": false,
+        "event_handlers": false,
+        "external_references": false
+      }
+    },
+    {
+      "file": "ollama.svg",
+      "bytes": 3290,
+      "sha256": "3a268218fb2e6e81fa31df70f70b51331625047794db81db21d35359428fae7a",
+      "source_package_path": "@lobehub/icons-static-svg@1.104.0/icons/ollama.svg",
+      "source_url": "https://unpkg.com/@lobehub/icons-static-svg@1.104.0/icons/ollama.svg",
+      "checks": {
+        "xml_valid": true,
+        "script_tags": false,
+        "event_handlers": false,
+        "external_references": false
+      }
+    },
+    {
+      "file": "openai.svg",
+      "bytes": 1687,
+      "sha256": "a595df6b423920c67a7f8f73c063e4bfb72d415948097b6cac063a2366bb5186",
+      "source_package_path": "@lobehub/icons-static-svg@1.104.0/icons/openai.svg",
+      "source_url": "https://unpkg.com/@lobehub/icons-static-svg@1.104.0/icons/openai.svg",
+      "checks": {
+        "xml_valid": true,
+        "script_tags": false,
+        "event_handlers": false,
+        "external_references": false
+      }
+    },
+    {
+      "file": "vllm.svg",
+      "bytes": 286,
+      "sha256": "3f837bad8d7f85d19e860a089639289ddd7492e67dc1ac7bd0f129f8f19b8ae6",
+      "source_package_path": "@lobehub/icons-static-svg@1.104.0/icons/vllm.svg",
+      "source_url": "https://unpkg.com/@lobehub/icons-static-svg@1.104.0/icons/vllm.svg",
+      "checks": {
+        "xml_valid": true,
+        "script_tags": false,
+        "event_handlers": false,
+        "external_references": false
+      }
+    }
+  ],
+  "not_staged": {
+    "portkey": "No matching Portkey SVG was present in this package; use text label unless a separately licensed/official asset is approved.",
+    "litellm": "No matching LiteLLM SVG was present in this package; official docs expose a favicon but its reuse license was not established, so use text label."
+  },
+  "dark_background": "Color assets were selected where supplied (Claude, Gemini, Bedrock, vLLM). Monochrome marks (OpenAI, Ollama, MCP) are single-color/currentColor variants; inspect fill/currentColor and apply CSS brightness/invert if they render black on the dark surface."
+}

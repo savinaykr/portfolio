@@ -1,8 +1,9 @@
 import * as React from "react";
+import Image from "next/image";
 import type { Tech } from "./technologies";
 
-// Renders an accurate brand logo when one exists, otherwise a tinted monogram
-// chip. This guarantees we never show a wrong/borrowed logo for a technology.
+// Brands use local SVGs or existing devicons; capabilities use neutral symbols.
+// Fixed dimensions keep labels stable while lazy-loaded logos arrive.
 export default function TechIcon({
   tech,
   size = 22,
@@ -10,9 +11,31 @@ export default function TechIcon({
   tech: Tech;
   size?: number;
 }) {
+  if (tech.image) {
+    return (
+      <Image
+        src={tech.image}
+        alt=""
+        aria-hidden
+        width={size}
+        height={size}
+        unoptimized
+        loading="lazy"
+        decoding="async"
+        className={`shrink-0 object-contain ${tech.imageClassName ?? ""}`}
+      />
+    );
+  }
+
   if (tech.icon) {
     const Icon = tech.icon;
-    return <Icon size={size} className="shrink-0" />;
+    return (
+      <Icon
+        size={size}
+        className={`shrink-0 ${tech.iconClassName ?? ""}`}
+        aria-hidden
+      />
+    );
   }
 
   const tint = tech.tint ?? "240 5% 65%";

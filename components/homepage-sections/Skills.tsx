@@ -17,9 +17,9 @@ export default function Skills() {
         <FadeInWhenVisible className="lg:sticky lg:top-24">
           <SkillCard />
         </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.1}>
+        <div>
           <SkillTagCard />
-        </FadeInWhenVisible>
+        </div>
       </div>
     </Section>
   );

@@ -1,4 +1,16 @@
 import type { ComponentType } from "react";
+import {
+  Bot,
+  BookOpen,
+  Search,
+  FlaskConical,
+  ShieldCheck,
+  GitBranch,
+  KeyRound,
+  Network,
+  Cable,
+  Router,
+} from "lucide-react";
 
 // Real brand icons (devicons): only used where an accurate logo exists.
 import GoOriginal from "devicons-react/lib/icons/GoOriginal";
@@ -30,6 +42,11 @@ export interface Tech {
   description: string;
   /** Accurate brand icon. Omit when no real logo exists; a monogram is shown instead. */
   icon?: DeviconType;
+  /** Local, licensed SVG brand artwork. No runtime icon CDN. */
+  image?: string;
+  /** White treatment for monochrome marks on this site's dark background. */
+  imageClassName?: string;
+  iconClassName?: string;
   /** Monogram label used when there's no brand icon (keeps the grid consistent, never a wrong logo). */
   mono?: string;
   /** Tint (HSL hue, sat%, light%) for the monogram chip. */
@@ -44,40 +61,99 @@ export interface SkillGroup {
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Applied AI",
-    blurb:
-      "Customer-facing agents, retrieval, evaluation, and AI product features.",
+    category: "Models & LLM Stack",
+    blurb: "Model APIs, gateways, managed access, and inference serving.",
     items: [
       {
-        name: "Multi-agent workflows",
-        mono: "AI",
-        description: "Coordination across concierge and product-domain agents.",
+        name: "OpenAI / GPT",
+        image: "/logos/openai.svg",
+        imageClassName: "brightness-0 invert",
+        description:
+          "GPT/OpenAI API integration in applications and enterprise agent workflows.",
+      },
+      {
+        name: "Claude",
+        image: "/logos/claude.svg",
+        description:
+          "Claude API integration in applications and enterprise agent workflows.",
+      },
+      {
+        name: "Gemini",
+        image: "/logos/gemini.svg",
+        description:
+          "Multimodal product features including media analysis, autofill, and liveness checks.",
+      },
+      {
+        name: "Amazon Bedrock",
+        image: "/logos/bedrock.svg",
+        description:
+          "Managed model access and application integration in current AI engineering work.",
+      },
+      {
+        name: "Portkey",
+        icon: Router,
+        description:
+          "AI gateway used in application and enterprise model integrations.",
+      },
+      {
+        name: "LiteLLM",
+        icon: Cable,
+        description: "Unified model API access and integration tooling.",
+      },
+      {
+        name: "vLLM",
+        image: "/logos/vllm.svg",
+        description:
+          "LLM inference serving used in current AI engineering work.",
+      },
+      {
+        name: "Ollama",
+        image: "/logos/ollama.svg",
+        imageClassName: "brightness-0 invert",
+        description:
+          "Model runtime and application integration used in current AI engineering work.",
+      },
+    ],
+  },
+  {
+    category: "Applied AI",
+    blurb:
+      "Agentic systems, retrieval, evaluation, and reliable AI applications.",
+    items: [
+      {
+        name: "AI Agents",
+        icon: Bot,
+        description:
+          "Multi-agent orchestration across concierge and product-domain agents.",
       },
       {
         name: "RAG",
-        mono: "RAG",
+        icon: BookOpen,
         description:
           "Retrieval-grounded applications and knowledge assistants.",
       },
       {
-        name: "Guardrails & evaluation",
-        mono: "Ev",
-        description: "Guardrails, testing, and evaluation for agent workflows.",
+        name: "Vector Search",
+        icon: Search,
+        description: "Embeddings, pgvector-based feed ranking, and retrieval.",
       },
       {
-        name: "Gemini",
-        mono: "Gem",
-        description: "Media analysis, form autofill, and liveness features.",
+        name: "LLM Evaluation",
+        icon: FlaskConical,
+        description: "Testing and evaluation of enterprise agent workflows.",
       },
       {
-        name: "pgvector",
-        mono: "pgv",
-        description: "Embeddings and vector-based feed ranking.",
+        name: "Guardrails",
+        icon: ShieldCheck,
+        description:
+          "Lending guardrails, deterministic data, and off-topic handling.",
       },
       {
-        name: "MCP tools",
-        mono: "MCP",
-        description: "MCP tools and coding agents used during development.",
+        name: "MCP",
+        image: "/logos/mcp.svg",
+        imageClassName: "brightness-0 invert",
+        description:
+          "MCP tools and AI coding assistants used during development.",
       },
     ],
   },
@@ -112,14 +188,19 @@ export const skillGroups: SkillGroup[] = [
         description: "Backend APIs and real-time applications.",
       },
       {
-        name: "ConnectRPC / gRPC",
+        name: "gRPC",
         icon: GrpcOriginal,
-        description: "Typed APIs and Protobuf service contracts.",
+        description: "ConnectRPC/gRPC APIs and Protobuf service contracts.",
       },
       {
-        name: "REST / GraphQL",
+        name: "REST APIs",
+        icon: Network,
+        description: "Application APIs, service integration, and data access.",
+      },
+      {
+        name: "GraphQL",
         icon: GraphqlPlain,
-        description: "Application APIs and data access.",
+        description: "GraphQL application APIs and query optimization.",
       },
     ],
   },
@@ -133,13 +214,14 @@ export const skillGroups: SkillGroup[] = [
         description: "Durable enterprise network-automation workflows.",
       },
       {
-        name: "NATS JetStream",
+        name: "NATS",
         icon: NatsOriginal,
-        description: "Event-driven services with transactional outboxes.",
+        description: "NATS JetStream messaging and transactional outboxes.",
       },
       {
         name: "Kafka",
         icon: ApachekafkaOriginal,
+        iconClassName: "brightness-0 invert",
         description: "Parallel telemetry processing and service messaging.",
       },
       {
@@ -155,12 +237,13 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    category: "Cloud, delivery & access",
+    category: "Cloud & Deployment",
     blurb: "Infrastructure from design through deployment and employee access.",
     items: [
       {
         name: "AWS",
         icon: AmazonwebservicesOriginalWordmark,
+        iconClassName: "brightness-0 invert",
         description:
           "Cloud infrastructure and video processing with Lambda and MediaConvert.",
       },
@@ -185,24 +268,24 @@ export const skillGroups: SkillGroup[] = [
         description: "Infrastructure provisioning across cloud providers.",
       },
       {
-        name: "FluxCD / CI/CD",
-        mono: "CD",
+        name: "CI/CD",
+        icon: GitBranch,
         description: "GitOps, Jenkins, and automated application delivery.",
       },
       {
-        name: "Observability",
+        name: "Grafana",
         icon: GrafanaOriginal,
         description:
           "Metrics, logs, and dashboards with Grafana, Loki, and Prometheus.",
       },
       {
-        name: "Employee SSO",
-        mono: "SSO",
+        name: "SSO",
+        icon: KeyRound,
         description: "Employee authentication and single sign-on at Neosenth.",
       },
       {
         name: "VPN",
-        mono: "VPN",
+        icon: ShieldCheck,
         description:
           "Internal resource access at Neosenth; WireGuard and OpenVPN at Zeliot.",
       },
@@ -237,4 +320,27 @@ export const skillGroups: SkillGroup[] = [
 ];
 
 // Flat lookup kept for components that reference a technology by name (e.g. ProjectCard).
-export const technologies: Tech[] = skillGroups.flatMap((g) => g.items);
+export const technologies: Tech[] = [
+  ...skillGroups.flatMap((group) => group.items),
+  // Precise project technology labels retain their broader skill's artwork.
+  {
+    name: "pgvector",
+    icon: Search,
+    description: "Vector search and embeddings inside PostgreSQL.",
+  },
+  {
+    name: "NATS JetStream",
+    icon: NatsOriginal,
+    description: "Durable event-driven messaging with transactional outboxes.",
+  },
+  {
+    name: "Multi-agent workflows",
+    icon: Bot,
+    description: "Multi-agent coordination and orchestration.",
+  },
+  {
+    name: "LLM evaluation",
+    icon: FlaskConical,
+    description: "Agent workflow testing and evaluation.",
+  },
+];
