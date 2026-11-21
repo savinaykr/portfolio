@@ -10,7 +10,7 @@ export default function Skills() {
       id="skills"
       eyebrow="Skills"
       title="What I work with"
-      description="Depth in backend platforms and the AI systems that run on them, not a checklist of everything I've touched."
+      description="Applied AI, supported by backend engineering and end-to-end infrastructure delivery."
       className="bg-white/[0.015]"
     >
       <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 items-start">

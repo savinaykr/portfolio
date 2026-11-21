@@ -1,10 +1,9 @@
-
 # CodeSark Portfolio
 
 [![Build + Push + Deploy](https://github.com/codesark/codesark-me/actions/workflows/build-push-deploy.yml/badge.svg)](https://github.com/codesark/codesark-me/actions/workflows/build-push-deploy.yml)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC)](https://tailwindcss.com/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38B2AC)](https://tailwindcss.com/)
 
 A modern, responsive portfolio website showcasing my professional work and skills. Built with cutting-edge technologies, this portfolio features a clean design, smooth animations, and seamless user experience.
 
@@ -16,7 +15,7 @@ A modern, responsive portfolio website showcasing my professional work and skill
   - Responsive layout for all devices
 
 - 🚀 **Advanced Technology**
-  - Server-side rendering with Next.js 14
+  - Server-side rendering with Next.js 16
   - Type-safe development with TypeScript
   - Component-driven UI with Radix UI
 
@@ -32,10 +31,10 @@ A modern, responsive portfolio website showcasing my professional work and skill
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** Next.js 14
+- **Frontend Framework:** Next.js 16
 - **Language:** TypeScript 5
 - **Styling:**
-  - Tailwind CSS 3
+  - Tailwind CSS 4
   - Framer Motion for animations
 - **UI Components:**
   - Radix UI for accessible components
@@ -52,19 +51,21 @@ A modern, responsive portfolio website showcasing my professional work and skill
 
 ### Prerequisites
 
-- Node.js 20.x or higher
+- Node.js 20.9 or higher (Node.js 22 recommended)
 - npm or yarn package manager
 - Git
 
 ### Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/codesark/codesark-me.git
    cd codesark-me
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -73,6 +74,7 @@ A modern, responsive portfolio website showcasing my professional work and skill
 
 3. **Configure environment variables**
    Create a `.env` file in the root directory with the following variables:
+
    ```env
    # SMTP Configuration
    SMTP_HOST=your_smtp_host
@@ -97,6 +99,7 @@ A modern, responsive portfolio website showcasing my professional work and skill
 ### Local Deployment
 
 1. **Build the Docker image**
+
    ```bash
    docker build -t codesark-portfolio .
    ```
@@ -109,6 +112,7 @@ A modern, responsive portfolio website showcasing my professional work and skill
 ### Production Deployment
 
 1. **Build optimized image**
+
    ```bash
    docker build --build-arg NODE_ENV=production -t codesark-portfolio:prod .
    ```
@@ -125,4 +129,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 © 2024 CodeSark. All rights reserved.
-

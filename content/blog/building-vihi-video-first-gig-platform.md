@@ -1,107 +1,66 @@
 ---
 title: "Building ViHi: A Video-First Gig Platform"
-date: "2026-02-08"
-excerpt: "Why we're betting on video and AI to reimagine how people get help and find work, and how we're building it with Go, Flutter, and ML at Neosenth."
+updated: "2026-11-21"
+excerpt: "A retrospective on building ViHi at Neosenth: Flutter clients, Go services, Gemini features, and the infrastructure and employee access systems behind the product."
 slug: "building-vihi-video-first-gig-platform"
 ---
 
-At **Neosenth**, we're building **ViHi**: a video-first gig platform where you post a short video of your problem, get **AI-matched professionals**, compare bids, and hire, or earn as a pro. This post is about why we chose this direction and how we're building it with **scalable systems**, **video**, and **AI**.
+From May to August 2026, I co-founded **Neosenth** and led engineering for **ViHi**, a video-first marketplace for local services and gigs. We launched on iOS and Android with support for **10 Indian locales**. This retrospective covers the product, AI features, backend, and infrastructure I helped bring together.
 
 ## Why video-first?
 
-Text and photos don't capture *“I need this fixed by Thursday”* or *“here’s exactly what’s broken.”* Video does. We wanted a format that:
+Text and photos do not always communicate the full context of a job. A short video can help someone explain what needs attention and give a service professional a clearer picture before responding.
 
-- Reduces back-and-forth and miscommunication
-- Lets pros assess the job quickly and bid accurately
-- Gives clients a clearer picture of who they’re hiring
-
-So the core interaction is **post a short video → get matched → compare and hire**. That required rethinking both the product and the stack.
-
-## What we're building
-
-ViHi isn’t just another job board. We’re putting **video** and **AI** at the center.
-
-### For people who need help
-
-1. **Record** a short video of the problem (e.g. a broken fixture, a design ask).
-2. **Submit** it on the app; our pipeline processes and indexes it.
-3. **Get matched** with relevant pros via AI (skills, context, and availability).
-4. **Compare bids** and hire; payment and scheduling live in the platform.
-
-### For professionals
-
-- Create a **pro profile** and show your work via short clips.
-- Receive **matched requests** instead of hunting for posts.
-- **Bid** on jobs that fit; earn through a fair **subscription** model instead of per-job fees.
-
-### Horizontal rule
-
-A clean separation before we get into the stack:
-
----
-
-Below, the tech choices that make this possible.
+The product brought that interaction into a mobile marketplace: share a request, discover relevant services and gigs, and connect with professionals. Building it required coordinating mobile clients, media processing, backend services, and AI-assisted features.
 
 ## Architecture and tech stack
 
-My background is in **fleet tracking**, **real-time analytics**, and **AI-powered products**: systems that handle *millions of records per minute*. For ViHi we needed:
-
-- **Low-latency APIs** and real-time updates
-- **Reliable ingestion** for video metadata and events
-- **ML pipelines** for matching and search
-- **Cross-platform clients** (mobile and web) with a single codebase where it made sense
-
-So we chose a stack that plays to those needs.
+I led architecture and development across **15+ Go microservices** and **Python AI services**. **Protobuf** and **ConnectRPC** defined the service contracts; **NATS JetStream**, paired with **transactional outboxes**, supported reliable messaging between services.
 
 ### Backend and data
 
-| Layer        | Technology   | Role                                      |
-| ------------ | ------------ | ----------------------------------------- |
-| API & services | **Go**, ConnectRPC / gRPC | Fast, type-safe APIs and service-to-service calls |
-| Data store   | **PostgreSQL** | Users, jobs, bids, subscriptions          |
-| Cache & sessions | **Redis**   | Sessions, rate limits, real-time state   |
-| Events       | **Kafka**    | Video upload events, matching jobs, notifications |
+- **APIs and services — Go, Protobuf, ConnectRPC/gRPC:** Typed APIs and service-to-service contracts
+- **Data — PostgreSQL:** Application data and relational queries
+- **Ranking — pgvector:** Embedding-based feed ranking with a deterministic fallback
+- **Events — NATS JetStream and transactional outboxes:** Reliable service messaging
+- **AI services — Python and Gemini:** Media analysis, form autofill, and liveness checks
 
-We use **ConnectRPC** (and gRPC where it fits) so that mobile and web clients get a consistent, typed contract and streaming where we need it.
+A transactional outbox keeps a service's data change and the record of its intended event in the same database transaction. Publishing can then be retried independently. Consumers still need to handle duplicate delivery; the outbox does not remove that responsibility.
 
-### Client and ML
+### Mobile and AI features
 
-- **Flutter** and **Dart** for iOS, Android, and web. One codebase for core flows and UI.
-- **PyTorch** and **TensorFlow** for matching and any on-server ML (e.g. embeddings, ranking).
-- **OpenCV** (and related tooling) for video thumbnails, basic analysis, and metadata extraction.
+**Flutter** and **Dart** provided the shared foundation for the iOS and Android apps. The AI features focused on specific product tasks: Gemini-powered media analysis, form autofill, and liveness checks, alongside feed ranking using pgvector embeddings.
 
-A small example of the kind of structure we use on the backend for job matching:
+The ranking service included a **deterministic fallback**. That gave the product a defined behavior when embedding-based ranking was unavailable or unsuitable, rather than making the whole experience depend on one AI path.
+
+## Infrastructure and employee access
+
+I initiated and took end-to-end responsibility for the infrastructure used to deploy the product. That included **AWS** and **Google Cloud**, with **GCP supporting AI and ML workloads**, and containerized deployment using **Docker** and **Kubernetes**.
+
+**Terraform** supported infrastructure provisioning, **FluxCD** supported Kubernetes delivery, and observability helped monitor the deployed services. The wider platform also used **Cloudflare**. Video processing used **AWS Lambda** and **AWS Elemental MediaConvert**.
+
+Employee access was part of the same responsibility. I implemented **employee authentication and single sign-on (SSO)**, together with **VPN access to internal resources**. These systems supported the people developing and operating the product as well as the workloads themselves.
+
+## Keeping the service contracts explicit
+
+The following simplified pseudocode illustrates a typed request at a ranking boundary. It is an architectural example, not a listing of ViHi's internal implementation:
 
 ```go
-type MatchRequest struct {
-    JobID     string   `json:"job_id"`
-    VideoRef  string   `json:"video_ref"`
-    Categories []string `json:"categories"`
-    Limit     int      `json:"limit"`
+type FeedRequest struct {
+    UserID string `json:"user_id"`
+    Limit  int    `json:"limit"`
 }
 
-func (s *MatchingService) FindPros(ctx context.Context, req *MatchRequest) ([]Pro, error) {
-    // Embed job + video metadata, query vector store, rank by relevance & availability
-    // Return top N pros for bidding
+func RankFeed(ctx context.Context, req FeedRequest) ([]FeedItem, error) {
+    // Retrieve candidates, rank using embeddings, and apply a
+    // deterministic fallback when the embedding path is unavailable.
 }
 ```
 
-Inline code like `MatchRequest` and `FindPros` lives in a larger **Go** codebase that stays explicit and testable.
+Clear contracts make it easier to evolve the mobile client, backend, and AI services independently. Infrastructure provisioning, release workflows, monitoring, and employee access need the same attention as the visible product features.
 
-### Blockquote
+ViHi gave me responsibility across those layers: from the mobile experience and AI capabilities to the services, deployment infrastructure, and access systems behind them.
 
-> Good systems are boring in the right places: consistent APIs, clear data models, and observable pipelines. The magic is in how video and AI improve the experience, not in reinventing the wheel everywhere.
+You can connect with me through [codesark.me](https://codesark.me) or learn more about [Neosenth](https://neosenth.com).
 
-We keep the “boring” parts solid so we can iterate on matching, UX, and fairness.
-
-## Fair model and launch
-
-We’re launching with a **subscription** model so pros aren’t nickel-and-dimed per gig. Clients get a clear path from *video → match → hire* without endless scrolling. We’re iterating on both sides of the marketplace.
-
-If you’re interested in **backing**, **partnering**, or just following along, I’d love to connect. You can reach out via [codesark.me](https://codesark.me) or [Neosenth](https://neosenth.com).
-
-![Savinay Kumar, Building ViHi at Neosenth](/savinay-wall.jpg)
-
----
-
-*Building with impact. Savinay Kumar, founder of Neosenth.*
+![Savinay Kumar at Neosenth](/savinay-wall.jpg)

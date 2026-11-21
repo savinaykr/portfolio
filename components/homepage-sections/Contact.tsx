@@ -6,10 +6,30 @@ import ContactCard from "../about/ContactCard";
 import { siteData } from "@/lib/siteData";
 
 const links = [
-  { icon: Mail, label: "Email", value: siteData.email, href: `mailto:${siteData.email}` },
-  { icon: Linkedin, label: "LinkedIn", value: "/in/codesark", href: siteData.socials.linkedin },
-  { icon: Github, label: "GitHub", value: "@codesark", href: siteData.socials.github },
-  { icon: FileText, label: "Résumé", value: "Download PDF", href: siteData.resume },
+  {
+    icon: Mail,
+    label: "Email",
+    value: siteData.email,
+    href: `mailto:${siteData.email}`,
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "/in/codesark",
+    href: siteData.socials.linkedin,
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "@codesark",
+    href: siteData.socials.github,
+  },
+  {
+    icon: FileText,
+    label: "Résumé",
+    value: "Download PDF",
+    href: siteData.resume,
+  },
 ];
 
 export default function Contact() {
@@ -17,8 +37,8 @@ export default function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Let's build something"
-      description={siteData.availability + ". Email is fastest."}
+      title="Let's connect"
+      description={siteData.contactInvitation}
     >
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         <FadeInWhenVisible>
@@ -28,7 +48,11 @@ export default function Contact() {
                 key={l.label}
                 href={l.href}
                 target={l.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={l.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                rel={
+                  l.href.startsWith("mailto:")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
                 className="terminal-card flex items-center gap-4 rounded-xl border border-slate-800 bg-white/[0.02] p-4 hover:border-primary/40 hover:bg-white/[0.04] transition-colors"
               >
                 <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">

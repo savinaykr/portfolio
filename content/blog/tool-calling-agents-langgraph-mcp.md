@@ -1,13 +1,14 @@
 ---
 title: "Reliable Tool-Calling Agents with LangGraph and MCP"
 date: "2026-06-19"
+updated: "2026-11-21"
 excerpt: "An agent that calls tools in a while-loop is a demo. Making one reliable takes explicit state, real guardrails, and a clean boundary between the agent and its tools."
 slug: "tool-calling-agents-langgraph-mcp"
 ---
 
 The first version of any agent is a while-loop: ask the model what to do, run the tool it picked, feed the result back, repeat until it says it is done. It works in a demo and falls apart in production. It loops forever, calls tools with malformed arguments, and gives you no way to see why it went wrong. Making agents reliable is mostly about replacing that loop with structure.
 
-We build agents with two pieces: **LangGraph** for control and state, and **MCP** for the tools.
+One architecture combines **LangGraph** for control and state with **MCP** for the tools. The examples below illustrate that pattern rather than documenting an employer implementation.
 
 ## Why a graph beats a loop
 
@@ -16,6 +17,8 @@ LangGraph models the agent as a state machine: nodes do work, edges decide what 
 - **Explicit state.** The conversation, intermediate results, and step count live in one typed object you can inspect, log, and assert on.
 - **Controlled branching.** A conditional edge decides whether to call a tool, ask the user, or finish. The control flow is data you can read, not behavior buried in an if statement.
 - **Checkpointing.** State persists between steps, so an agent can pause for human approval or resume after a crash instead of starting over.
+
+The following pseudocode illustrates a bounded control flow rather than a complete, version-specific implementation:
 
 ```python
 def should_continue(state: AgentState) -> str:
@@ -35,7 +38,7 @@ That `MAX_STEPS` check is not a detail. An unbounded agent is an unbounded bill 
 
 The other half is the tools, and the trap is wiring them straight into the agent. Do that and every tool is welded to one agent's code. The Model Context Protocol (MCP) puts a standard interface between the agent and its tools instead: tools live behind an MCP server, the agent is a client, and the two evolve independently.
 
-The payoff is reuse and isolation. The same MCP server that exposes our database queries and internal APIs can back a LangGraph agent, the Claude Agent SDK, or an IDE assistant, with no changes. Tools get versioned, permissioned, and tested on their own, like any other service.
+The payoff is reuse and isolation. An MCP server can expose tools to compatible clients, such as an agent or IDE assistant. Each client still needs the appropriate integration, authentication, and authorization. Tools get versioned, permissioned, and tested on their own, like any other service.
 
 ## Where reliability actually comes from
 

@@ -87,8 +87,26 @@ export default async function BlogPostPage({ params }: PageProps) {
           {post.title}
         </h1>
         <div className="flex items-center gap-3 mt-4 text-sm text-gray-500">
-          <time dateTime={post.date}>{formattedDate}</time>
-          <span aria-hidden>·</span>
+          {post.date && (
+            <>
+              <time dateTime={post.date}>{formattedDate}</time>
+              <span aria-hidden>·</span>
+            </>
+          )}
+          {post.updated && (
+            <time dateTime={post.updated}>
+              Updated{" "}
+              {new Date(post.updated + "T00:00:00Z").toLocaleDateString(
+                "en-US",
+                {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                  timeZone: "UTC",
+                },
+              )}
+            </time>
+          )}
           <span>{siteData.name}</span>
         </div>
       </header>

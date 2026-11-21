@@ -33,7 +33,6 @@ export function personSchema() {
       "@type": "CollegeOrUniversity",
       name: "Indian Institute of Information Technology (IIIT) Una",
     },
-    award: ["Work recognized by India's Finance Minister (Career Capsule)"],
     hasOccupation: {
       "@type": "Occupation",
       name: siteData.role,

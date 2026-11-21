@@ -3,8 +3,6 @@
 import * as React from "react";
 import { SocialIcon } from "react-social-icons";
 
-export interface ISocialIconsProps {}
-
 const socials = [
   {
     _id: 1,
@@ -23,7 +21,7 @@ const socials = [
   },
 ];
 
-export default function SocialIcons(props: ISocialIconsProps) {
+export default function SocialIcons() {
   return (
     <div className="flex gap-5">
       {socials.map((social) => (

@@ -19,9 +19,9 @@ export default function Homepage(props: IHomepageProps) {
       <ScrollToHash />
       <Hero />
       <About />
+      <Projects />
       <Experience />
       <Skills />
-      <Projects />
       <Blog posts={props.posts ?? []} />
       <Contact />
       <Footer />

@@ -23,24 +23,30 @@ export default function Blog({ posts }: IBlogProps) {
       ) : (
         <div className="grid md:grid-cols-2 gap-5">
           {posts.map((post, index) => (
-            <FadeInWhenVisible key={post.slug} delay={index * 0.08} className="h-full">
+            <FadeInWhenVisible
+              key={post.slug}
+              delay={index * 0.08}
+              className="h-full"
+            >
               <Link
                 href={`/blog/${post.slug}`}
                 className="terminal-card group flex h-full flex-col rounded-2xl border border-slate-800 bg-white/[0.02] p-6 hover:border-primary/40 transition-colors"
               >
-                <time
-                  dateTime={post.date}
-                  className="inline-flex items-center gap-1.5 text-xs text-gray-500"
-                >
-                  <CalendarDays className="size-3.5 shrink-0" aria-hidden />
-                  {post.date
-                    ? new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })
-                    : ""}
-                </time>
+                {post.date && (
+                  <time
+                    dateTime={post.date}
+                    className="inline-flex items-center gap-1.5 text-xs text-gray-500"
+                  >
+                    <CalendarDays className="size-3.5 shrink-0" aria-hidden />
+                    {post.date
+                      ? new Date(post.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                      : ""}
+                  </time>
+                )}
                 <h3 className="mt-3 font-display text-lg font-semibold text-gray-100 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>

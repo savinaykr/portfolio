@@ -4,8 +4,9 @@ import { siteData } from "@/lib/siteData";
 
 const nav = [
   { label: "About", href: "/#about" },
+  { label: "Selected work", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
   { label: "Skills", href: "/#skills" },
-  { label: "Projects", href: "/#projects" },
   { label: "Blog", href: "/#blog" },
   { label: "Contact", href: "/#contact" },
 ];

@@ -6,10 +6,8 @@ import PythonOriginal from "devicons-react/lib/icons/PythonOriginal";
 import TypescriptOriginal from "devicons-react/lib/icons/TypescriptOriginal";
 import JavascriptOriginal from "devicons-react/lib/icons/JavascriptOriginal";
 import NodejsOriginal from "devicons-react/lib/icons/NodejsOriginal";
-import FastapiOriginal from "devicons-react/lib/icons/FastapiOriginal";
 import ReactOriginal from "devicons-react/lib/icons/ReactOriginal";
 import NextjsOriginal from "devicons-react/lib/icons/NextjsOriginal";
-import TailwindcssOriginal from "devicons-react/lib/icons/TailwindcssOriginal";
 import PostgresqlOriginal from "devicons-react/lib/icons/PostgresqlOriginal";
 import RedisOriginal from "devicons-react/lib/icons/RedisOriginal";
 import GraphqlPlain from "devicons-react/lib/icons/GraphqlPlain";
@@ -19,15 +17,9 @@ import NatsOriginal from "devicons-react/lib/icons/NatsOriginal";
 import DockerOriginal from "devicons-react/lib/icons/DockerOriginal";
 import KubernetesOriginal from "devicons-react/lib/icons/KubernetesOriginal";
 import TerraformOriginal from "devicons-react/lib/icons/TerraformOriginal";
-import HelmOriginal from "devicons-react/lib/icons/HelmOriginal";
 import AmazonwebservicesOriginalWordmark from "devicons-react/lib/icons/AmazonwebservicesOriginalWordmark";
 import GooglecloudOriginal from "devicons-react/lib/icons/GooglecloudOriginal";
-import CloudflareOriginal from "devicons-react/lib/icons/CloudflareOriginal";
-import LinuxOriginal from "devicons-react/lib/icons/LinuxOriginal";
-import GitOriginal from "devicons-react/lib/icons/GitOriginal";
-import GithubactionsOriginal from "devicons-react/lib/icons/GithubactionsOriginal";
 import GrafanaOriginal from "devicons-react/lib/icons/GrafanaOriginal";
-import PytorchOriginal from "devicons-react/lib/icons/PytorchOriginal";
 import FlutterOriginal from "devicons-react/lib/icons/FlutterOriginal";
 import DartOriginal from "devicons-react/lib/icons/DartOriginal";
 
@@ -52,71 +44,194 @@ export interface SkillGroup {
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: "AI / LLM Platform",
-    blurb: "The platform and operations layer around LLMs, built for reliability and cost, not demos.",
+    category: "Applied AI",
+    blurb:
+      "Customer-facing agents, retrieval, evaluation, and AI product features.",
     items: [
-      { name: "RAG", mono: "RAG", tint: "262 80% 66%", description: "Retrieval-Augmented Generation: chunking, hybrid search, reranking." },
-      { name: "vLLM", mono: "vL", tint: "200 90% 60%", description: "Self-hosted inference for open-weight models (Llama, Qwen, Mistral)." },
-      { name: "MCP", mono: "MCP", tint: "24 90% 60%", description: "Model Context Protocol: connects agents to tools and data." },
-      { name: "Evals (RAGAS · Langfuse)", mono: "Ev", tint: "330 75% 65%", description: "Automated LLM evaluation and tracing, run as a CI quality gate." },
-      { name: "Langfuse", mono: "Lf", tint: "280 60% 62%", description: "LLM tracing and observability: prompts, latency, tokens, cost." },
-      { name: "pgvector", mono: "pgv", tint: "204 70% 53%", description: "Vector similarity search inside PostgreSQL." },
-      { name: "Qdrant", mono: "Qd", tint: "350 80% 62%", description: "Vector database for similarity search and retrieval." },
-      { name: "Gemini", mono: "Gem", tint: "217 89% 61%", description: "Google's hosted multimodal models, used via API alongside self-hosted vLLM." },
-      { name: "LangGraph", mono: "LG", tint: "150 60% 55%", description: "Stateful, multi-step tool-calling agents." },
-      { name: "PyTorch", icon: PytorchOriginal, description: "Deep-learning framework underpinning model work." },
+      {
+        name: "Multi-agent workflows",
+        mono: "AI",
+        description: "Coordination across concierge and product-domain agents.",
+      },
+      {
+        name: "RAG",
+        mono: "RAG",
+        description:
+          "Retrieval-grounded applications and knowledge assistants.",
+      },
+      {
+        name: "Guardrails & evaluation",
+        mono: "Ev",
+        description: "Guardrails, testing, and evaluation for agent workflows.",
+      },
+      {
+        name: "Gemini",
+        mono: "Gem",
+        description: "Media analysis, form autofill, and liveness features.",
+      },
+      {
+        name: "pgvector",
+        mono: "pgv",
+        description: "Embeddings and vector-based feed ranking.",
+      },
+      {
+        name: "MCP tools",
+        mono: "MCP",
+        description: "MCP tools and coding agents used during development.",
+      },
     ],
   },
   {
-    category: "Languages",
-    blurb: "Day-to-day for AI services, platform code, and tooling.",
+    category: "Languages & APIs",
+    blurb: "Services, integration contracts, and application development.",
     items: [
-      { name: "Python", icon: PythonOriginal, description: "AI services, FastAPI data layer, and ML ranking pipelines." },
-      { name: "Go", icon: GoOriginal, description: "Event-driven microservices and platform tooling." },
-      { name: "TypeScript", icon: TypescriptOriginal, description: "Type-safe services and front-ends." },
-      { name: "JavaScript", icon: JavascriptOriginal, description: "The language of the web." },
-      { name: "Node.js", icon: NodejsOriginal, description: "Runtime for scalable server-side apps." },
+      {
+        name: "Python",
+        icon: PythonOriginal,
+        description: "AI services, agent development, testing, and evaluation.",
+      },
+      {
+        name: "Go",
+        icon: GoOriginal,
+        description:
+          "Microservices, backend systems, and AI services integration.",
+      },
+      {
+        name: "TypeScript",
+        icon: TypescriptOriginal,
+        description: "Enterprise automation, services, and frontends.",
+      },
+      {
+        name: "JavaScript",
+        icon: JavascriptOriginal,
+        description: "Web applications and Node.js services.",
+      },
+      {
+        name: "Node.js",
+        icon: NodejsOriginal,
+        description: "Backend APIs and real-time applications.",
+      },
+      {
+        name: "ConnectRPC / gRPC",
+        icon: GrpcOriginal,
+        description: "Typed APIs and Protobuf service contracts.",
+      },
+      {
+        name: "REST / GraphQL",
+        icon: GraphqlPlain,
+        description: "Application APIs and data access.",
+      },
     ],
   },
   {
-    category: "Backend & Data",
-    blurb: "Event-driven services, APIs, durable workflows, and storage.",
+    category: "Distributed systems & data",
+    blurb: "Messaging, durable workflows, storage, and caching.",
     items: [
-      { name: "gRPC", icon: GrpcOriginal, description: "High-performance, Protobuf-based RPC." },
-      { name: "ConnectRPC", mono: "cR", tint: "210 9% 60%", description: "Simple, Protobuf-based RPC over HTTP." },
-      { name: "GraphQL", icon: GraphqlPlain, description: "Query language and runtime for APIs." },
-      { name: "FastAPI", icon: FastapiOriginal, description: "High-performance Python API framework." },
-      { name: "Kafka", icon: ApachekafkaOriginal, description: "Distributed event-streaming platform." },
-      { name: "NATS", icon: NatsOriginal, description: "Lightweight, high-performance eventing (JetStream)." },
-      { name: "Temporal", mono: "Tp", tint: "0 0% 75%", description: "Durable, fault-tolerant workflow orchestration." },
-      { name: "PostgreSQL", icon: PostgresqlOriginal, description: "Relational database (with PostGIS and pgvector)." },
-      { name: "Redis", icon: RedisOriginal, description: "In-memory store for caching and queues." },
+      {
+        name: "Temporal",
+        mono: "Tp",
+        description: "Durable enterprise network-automation workflows.",
+      },
+      {
+        name: "NATS JetStream",
+        icon: NatsOriginal,
+        description: "Event-driven services with transactional outboxes.",
+      },
+      {
+        name: "Kafka",
+        icon: ApachekafkaOriginal,
+        description: "Parallel telemetry processing and service messaging.",
+      },
+      {
+        name: "PostgreSQL",
+        icon: PostgresqlOriginal,
+        description: "Relational data, pgvector, and PostGIS.",
+      },
+      {
+        name: "Redis",
+        icon: RedisOriginal,
+        description: "Caching, TTLs, and application performance.",
+      },
     ],
   },
   {
-    category: "Cloud & Infra",
-    blurb: "Multi-cloud, containerized, and observable by default.",
+    category: "Cloud, delivery & access",
+    blurb: "Infrastructure from design through deployment and employee access.",
     items: [
-      { name: "Kubernetes", icon: KubernetesOriginal, description: "Container orchestration (GKE in production)." },
-      { name: "Docker", icon: DockerOriginal, description: "Packages and runs apps in containers." },
-      { name: "Terraform", icon: TerraformOriginal, description: "Infrastructure-as-code across GCP, AWS, and Cloudflare." },
-      { name: "Helm", icon: HelmOriginal, description: "Package manager for Kubernetes deployments." },
-      { name: "GitOps (FluxCD)", mono: "Fx", tint: "199 89% 55%", description: "Declarative, Git-driven continuous delivery to Kubernetes with FluxCD." },
-      { name: "GCP", icon: GooglecloudOriginal, description: "Google Cloud, including GKE." },
-      { name: "AWS", icon: AmazonwebservicesOriginalWordmark, description: "Amazon Web Services cloud platform." },
-      { name: "Cloudflare", icon: CloudflareOriginal, description: "Edge networking, DNS, and Workers." },
-      { name: "CI/CD", icon: GithubactionsOriginal, description: "Continuous delivery with GitHub Actions." },
-      { name: "Observability", icon: GrafanaOriginal, description: "Grafana, Loki, and VictoriaMetrics for metrics, logs, and dashboards." },
-      { name: "Linux", icon: LinuxOriginal, description: "Unix-like operating system foundation." },
-      { name: "Git", icon: GitOriginal, description: "Distributed version control." },
+      {
+        name: "AWS",
+        icon: AmazonwebservicesOriginalWordmark,
+        description:
+          "Cloud infrastructure and video processing with Lambda and MediaConvert.",
+      },
+      {
+        name: "GCP",
+        icon: GooglecloudOriginal,
+        description: "Cloud infrastructure, GKE, and AI/ML workloads.",
+      },
+      {
+        name: "Kubernetes",
+        icon: KubernetesOriginal,
+        description: "Cloud and on-premises application deployments.",
+      },
+      {
+        name: "Docker",
+        icon: DockerOriginal,
+        description: "Containerized application builds and deployments.",
+      },
+      {
+        name: "Terraform",
+        icon: TerraformOriginal,
+        description: "Infrastructure provisioning across cloud providers.",
+      },
+      {
+        name: "FluxCD / CI/CD",
+        mono: "CD",
+        description: "GitOps, Jenkins, and automated application delivery.",
+      },
+      {
+        name: "Observability",
+        icon: GrafanaOriginal,
+        description:
+          "Metrics, logs, and dashboards with Grafana, Loki, and Prometheus.",
+      },
+      {
+        name: "Employee SSO",
+        mono: "SSO",
+        description: "Employee authentication and single sign-on at Neosenth.",
+      },
+      {
+        name: "VPN",
+        mono: "VPN",
+        description:
+          "Internal resource access at Neosenth; WireGuard and OpenVPN at Zeliot.",
+      },
     ],
   },
   {
-    category: "Mobile",
-    blurb: "Cross-platform clients for shipped products.",
+    category: "Frontend & mobile",
+    blurb: "Interfaces for shipped web and mobile products.",
     items: [
-      { name: "Flutter", icon: FlutterOriginal, description: "Cross-platform mobile app framework." },
-      { name: "Dart", icon: DartOriginal, description: "The language behind Flutter." },
+      {
+        name: "React",
+        icon: ReactOriginal,
+        description: "Frontend application development.",
+      },
+      {
+        name: "Next.js",
+        icon: NextjsOriginal,
+        description: "React web applications.",
+      },
+      {
+        name: "Flutter",
+        icon: FlutterOriginal,
+        description: "ViHi clients for iOS and Android.",
+      },
+      {
+        name: "Dart",
+        icon: DartOriginal,
+        description: "Flutter application development.",
+      },
     ],
   },
 ];

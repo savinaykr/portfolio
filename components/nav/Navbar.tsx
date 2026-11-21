@@ -9,9 +9,9 @@ import { siteData } from "@/lib/siteData";
 
 const sections = [
   { name: "About", id: "about" },
+  { name: "Selected work", id: "projects" },
   { name: "Experience", id: "experience" },
   { name: "Skills", id: "skills" },
-  { name: "Projects", id: "projects" },
   { name: "Blog", id: "blog" },
   { name: "Contact", id: "contact" },
 ];
@@ -37,7 +37,7 @@ export default function Navbar() {
           if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
     );
     ids.forEach((id) => {
       const el = document.getElementById(id);
@@ -103,7 +103,7 @@ export default function Navbar() {
             href="/#contact"
             className="text-sm px-3.5 py-2 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
           >
-            Hire me
+            Let&apos;s connect
           </Link>
         </div>
 
@@ -156,7 +156,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className="flex-1 text-center text-sm px-3.5 py-2.5 rounded-md bg-primary text-primary-foreground font-medium"
                 >
-                  Hire me
+                  Let&apos;s connect
                 </Link>
               </div>
             </div>

@@ -3,46 +3,7 @@ import Section from "@/components/shared/Section";
 import FadeInWhenVisible from "../animation/FadeInWhenVisible";
 import ProjectCard from "../projects/ProjectCard";
 
-const projects = [
-  {
-    title: "ViHi",
-    category: "Flagship · Neosenth",
-    description:
-      "Video-first services platform: post a short video of your problem, get AI-matched professionals, compare bids, and hire. The AI layer is built end to end: RAG on pgvector, Gemini media analysis and liveness, tool-calling agents over MCP, and self-hosted vLLM, running on 15+ event-driven Go microservices on Kubernetes.",
-    technologies: [
-      "RAG", "vLLM", "MCP", "Gemini", "Python", "pgvector", "Go",
-      "Kubernetes", "NATS", "PostgreSQL", "Redis", "Terraform",
-      "ConnectRPC", "gRPC", "Flutter", "Dart",
-    ],
-    url: "https://neosenth.com",
-    github: "",
-    highlighted: true,
-  },
-  {
-    title: "SML Saarthi",
-    category: "Built at Zeliot · Fleet telematics",
-    description:
-      "Tracking, monitoring, alerting, and analytics for SML ISUZU: fleet optimization for buses and trucks, ingesting and processing high-volume vehicle telemetry at fleet scale.",
-    technologies: [
-      "React", "Node.js", "Kafka", "GraphQL", "Material UI", "Google Maps", "TypeScript",
-    ],
-    url: "https://pro.smlsaarthi.com",
-    github: "",
-    highlighted: false,
-  },
-  {
-    title: "Avarta Life",
-    category: "Side project · Google Gemini AI Challenge",
-    description:
-      "Hackathon project for the Google Gemini AI Challenge: a smart-recycling assistant that helps people recycle and reuse waste materials, with location-aware guidance.",
-    technologies: [
-      "Gemini AI", "Next.js", "Flutter", "FastAPI", "React", "Tailwind CSS", "Google Maps", "RAG", "Firebase",
-    ],
-    url: "https://avarta.life",
-    github: "https://github.com/orgs/Avarta-Life/repositories",
-    highlighted: false,
-  },
-];
+import { projects } from "@/lib/career";
 
 export default function Projects() {
   const [featured, ...rest] = projects;
@@ -50,9 +11,9 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="Projects"
-      title="Things I've built"
-      description="Production systems shipped end-to-end, from AI platforms to enterprise telematics."
+      eyebrow="Selected work"
+      title="AI products and the systems behind them"
+      description="Selected work across banking agents, a consumer marketplace, enterprise automation, and real-time telemetry."
     >
       <div className="flex flex-col gap-6">
         <FadeInWhenVisible>

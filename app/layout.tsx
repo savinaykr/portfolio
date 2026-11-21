@@ -5,11 +5,7 @@ import Navbar from "@/components/nav/Navbar";
 import Background from "@/components/background/Background";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteData } from "@/lib/siteData";
-import {
-  personSchema,
-  websiteSchema,
-  profilePageSchema,
-} from "@/lib/jsonLd";
+import { personSchema, websiteSchema, profilePageSchema } from "@/lib/jsonLd";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -33,15 +29,14 @@ export const metadata: Metadata = {
   keywords: [
     siteData.name,
     siteData.handle,
-    "AI Platform Engineer",
+    "Senior AI Engineer",
+    "Applied AI",
+    "Agentic Systems",
     "AI Engineer",
     "LLM Engineer",
-    "MLOps",
     "Technical Lead",
     "Python",
     "RAG",
-    "vLLM",
-    "LLM inference",
     "MCP",
     "Kubernetes",
     "Backend Engineer",
@@ -67,7 +62,9 @@ export const metadata: Metadata = {
     description: siteData.summary,
     url: siteData.url,
     siteName: siteData.name,
-    images: [{ url: siteData.ogImage, width: 1200, height: 630, alt: siteData.name }],
+    images: [
+      { url: siteData.ogImage, width: 1200, height: 630, alt: siteData.name },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -90,9 +87,7 @@ export default function RootLayout({
       <body
         className={`${robotoMono.variable} ${poppins.variable} ${inter.variable} font-sans min-h-screen bg-background text-foreground antialiased`}
       >
-        <JsonLd
-          data={[personSchema(), websiteSchema(), profilePageSchema()]}
-        />
+        <JsonLd data={[personSchema(), websiteSchema(), profilePageSchema()]} />
         <Background />
         <Navbar />
         {children}

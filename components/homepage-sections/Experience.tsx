@@ -1,63 +1,10 @@
 import * as React from "react";
-import Link from "next/link";
-import { Award, FileText, GraduationCap } from "lucide-react";
+import { FileText, GraduationCap } from "lucide-react";
 import Section from "@/components/shared/Section";
 import FadeInWhenVisible from "../animation/FadeInWhenVisible";
 import { siteData } from "@/lib/siteData";
 
-interface Role {
-  company: string;
-  role: string;
-  dates: string;
-  current?: boolean;
-  impact: string;
-  award?: string;
-  tech?: string[];
-}
-
-const roles: Role[] = [
-  {
-    company: "Neosenth",
-    role: "Technical Lead & Co-Founder",
-    dates: "Jan 2026 to Jun 2026",
-    impact:
-      "Shipped ViHi from zero to live on the App Store & Google Play: built the AI layer end to end (RAG on pgvector, Gemini plus self-hosted vLLM, tool-calling agents over MCP, automated evals) on 15+ event-driven Go microservices. Mentored 5 interns.",
-    tech: ["RAG", "vLLM", "MCP", "Python", "Go", "Kubernetes"],
-  },
-  {
-    company: "Lumen Technologies",
-    role: "Senior Software Engineer (SDC-II)",
-    dates: "2024 to 2026",
-    impact:
-      "Built an internal LLMOps assistant that analyzes production logs and suggests grounded fixes: RAG over company docs with evals and guardrails. Also delivered Colorless and Intent-Based Networking automation with Temporal and Itential.",
-    tech: ["RAG", "LLMOps", "TypeScript", "Temporal"],
-  },
-  {
-    company: "Zeliot",
-    role: "Senior Software Engineer (Team Lead)",
-    dates: "2023 to 2024",
-    impact:
-      "Led 10+ engineers building SML Saarthi (fleet analytics for SML ISUZU): AI and computer-vision vehicle tracking sustaining ~400ms latency, plus GenAI/RAG-powered analytics.",
-    tech: ["Computer Vision", "GenAI/RAG", "Node.js", "Kafka"],
-  },
-  {
-    company: "S2T",
-    role: "Software Engineer",
-    dates: "2021 to 2023",
-    impact:
-      "Owned on-prem Kubernetes and led the Docker Swarm to Kubernetes migration for AI investigation products (WEBINT/OSINT); cut service latency to sub-second.",
-    tech: ["Kubernetes", "AI Products", "Microservices"],
-  },
-  {
-    company: "Career Capsule",
-    role: "Technical Lead & Co-Founder",
-    dates: "2019 to 2021",
-    impact:
-      "Co-founded an ed-tech startup; built a WebRTC live-class platform handling 100+ concurrent students per session.",
-    award: "Recognized by India's Finance Minister",
-    tech: ["WebRTC", "Node.js"],
-  },
-];
+import { roles } from "@/lib/career";
 
 export default function Experience() {
   return (
@@ -93,9 +40,11 @@ export default function Experience() {
                   </span>
                 </div>
                 <p className="mt-0.5 text-sm text-primary/90">{r.role}</p>
-                <p className="mt-2 text-sm text-gray-400 leading-relaxed max-w-2xl">
-                  {r.impact}
-                </p>
+                <ul className="mt-3 max-w-3xl space-y-2.5 list-disc pl-4 text-sm leading-relaxed text-gray-300 marker:text-primary/60">
+                  {r.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
                 {r.tech && (
                   <ul className="mt-2.5 flex flex-wrap gap-1.5">
                     {r.tech.map((t) => (
@@ -107,12 +56,6 @@ export default function Experience() {
                       </li>
                     ))}
                   </ul>
-                )}
-                {r.award && (
-                  <p className="mt-2 inline-flex items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs text-primary">
-                    <Award className="size-3.5" aria-hidden />
-                    {r.award}
-                  </p>
                 )}
               </FadeInWhenVisible>
             </li>
@@ -129,10 +72,10 @@ export default function Experience() {
             <p className="mt-3 text-sm font-semibold text-gray-100">
               B.Tech, Computer Science
             </p>
-            <p className="text-sm text-gray-400">
-              IIIT Una
+            <p className="text-sm text-gray-400">IIIT Una</p>
+            <p className="font-mono text-xs text-gray-500 mt-0.5">
+              Aug 2017 – May 2021
             </p>
-            <p className="font-mono text-xs text-gray-500 mt-0.5">2017 to 2021</p>
 
             <a
               href={siteData.resume}

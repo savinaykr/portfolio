@@ -129,9 +129,8 @@ export function ContactCard() {
                   setValue("subject", value);
                 }}
               >
-                <SelectTrigger>
+                <SelectTrigger id="subject">
                   <SelectValue
-                    id="subject"
                     placeholder="What is it about?"
                     {...register("subject")}
                   />
@@ -151,7 +150,7 @@ export function ContactCard() {
               )}
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="contact-subject">Message</Label>
+              <Label htmlFor="contact-message">Message</Label>
               <Textarea
                 id="contact-message"
                 placeholder="Feel free to write me."
@@ -163,7 +162,7 @@ export function ContactCard() {
             </div>
           </div>
           <CardFooter className="pt-2 px-0 flex justify-between">
-            <Button variant="outline" onClick={() => reset()}>
+            <Button type="button" variant="outline" onClick={() => reset()}>
               Reset
             </Button>
             <LoadingButton loading={isLoading} type="submit">

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowDown, ArrowUpRight, FileText, MapPin } from "lucide-react";
 import SocialIcons from "../socials/SocialIcons";
 import TerminalTicker from "../hero/TerminalTicker";
-import ScrambleText from "../hero/ScrambleText";
 import { siteData } from "@/lib/siteData";
 
 // Entrance animations are pure CSS (animate-fade-up + per-block delays), so the
@@ -13,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden"
+      className="relative flex items-center pt-28 pb-16 lg:min-h-[min(900px,100svh)] overflow-hidden"
     >
       {/* Ambient glow */}
       <div
@@ -22,30 +21,28 @@ export default function Hero() {
       />
       <div className="section-shell relative grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-center">
         <div>
-          <div className="animate-fade-up inline-flex items-center gap-2 border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-mono text-xs text-emerald-300">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
-            </span>
-            {siteData.availability}
-          </div>
+          <p className="animate-fade-up font-mono text-xs tracking-wide text-primary">
+            Applied AI &amp; agentic systems
+          </p>
 
           <h1 className="animate-fade-up [animation-delay:60ms] mt-6 font-display font-bold tracking-tight">
-            <ScrambleText
-              text={siteData.name}
-              className="block text-4xl sm:text-5xl lg:text-6xl text-gray-50"
-            />
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-gray-50">
+              {siteData.name}
+            </span>
             <span className="mt-2 block text-xl sm:text-2xl lg:text-3xl text-gray-400">
               {siteData.role}
             </span>
           </h1>
 
+          <p className="mt-3 text-sm text-gray-300">
+            at {siteData.worksFor.name}
+          </p>
+
           <p className="animate-fade-up [animation-delay:120ms] mt-5 max-w-xl text-lg text-gray-300 leading-relaxed">
             {siteData.tagline}
           </p>
           <p className="animate-fade-up [animation-delay:160ms] mt-3 max-w-xl text-sm text-gray-500 leading-relaxed font-mono">
-            RAG · vLLM inference · evals · agents over MCP, in Python, on Go
-            &amp; Kubernetes platforms I build myself.
+            {siteData.focus}
           </p>
 
           <div className="animate-fade-up [animation-delay:200ms] mt-5 flex items-center gap-2 text-sm text-gray-500">

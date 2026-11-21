@@ -4,10 +4,13 @@ import { ArrowUpRight, Github, Star } from "lucide-react";
 import { technologies, type Tech } from "../skills/technologies";
 import TechIcon from "../skills/TechIcon";
 
-const techMap = technologies.reduce((acc, tech) => {
-  acc[tech.name] = tech;
-  return acc;
-}, {} as Record<string, Tech>);
+const techMap = technologies.reduce(
+  (acc, tech) => {
+    acc[tech.name] = tech;
+    return acc;
+  },
+  {} as Record<string, Tech>,
+);
 
 export interface IProjectCardProps {
   title: string;
@@ -21,7 +24,7 @@ export interface IProjectCardProps {
 
 export default function ProjectCard(props: IProjectCardProps) {
   const highlighted = props.highlighted === true;
-  const maxTech = highlighted ? 14 : 8;
+  const maxTech = 6;
   const shown = props.technologies.slice(0, maxTech);
   const overflow = props.technologies.length - shown.length;
 
@@ -36,7 +39,7 @@ export default function ProjectCard(props: IProjectCardProps) {
       {highlighted && (
         <span className="absolute -top-3 left-6 inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-xs font-medium text-primary-foreground">
           <Star className="size-3" aria-hidden />
-          Flagship
+          Featured
         </span>
       )}
 

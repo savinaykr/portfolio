@@ -1,16 +1,43 @@
 import * as React from "react";
-import { Briefcase, Compass, MapPin, Sparkles, Rocket, Award } from "lucide-react";
+import {
+  Briefcase,
+  Compass,
+  MapPin,
+  Sparkles,
+  Rocket,
+  ShieldCheck,
+} from "lucide-react";
 import Section from "@/components/shared/Section";
 import FadeInWhenVisible from "../animation/FadeInWhenVisible";
 import AboutCard from "../about/AboutCard";
 
 const glance = [
-  { icon: Briefcase, label: "Scale", value: "15+ Go microservices in prod · led 10+ engineers" },
-  { icon: Compass, label: "Focus", value: "RAG · vLLM · evals · agents over MCP" },
-  { icon: Rocket, label: "Recently", value: "Co-founded Neosenth, shipped ViHi" },
+  {
+    icon: Briefcase,
+    label: "Currently",
+    value: "Senior AI Engineer · Commonwealth Bank of Australia",
+  },
+  {
+    icon: Compass,
+    label: "Focus",
+    value: "Applied AI · Agents · RAG · Distributed systems",
+  },
+  {
+    icon: Rocket,
+    label: "Product delivery",
+    value: "Companion lending pilot · ViHi on iOS & Android",
+  },
   { icon: MapPin, label: "Based in", value: "Bengaluru, India" },
-  { icon: Award, label: "Recognition", value: "Work recognized by India's Finance Minister" },
-  { icon: Sparkles, label: "Open to", value: "AI-platform · Platform / Backend · FDE roles" },
+  {
+    icon: ShieldCheck,
+    label: "Infrastructure",
+    value: "Employee SSO & VPN · AWS/GCP deployments",
+  },
+  {
+    icon: Sparkles,
+    label: "Leadership",
+    value: "Pod delivery · Architecture · Teams of 6+",
+  },
 ];
 
 export default function About() {
@@ -18,8 +45,8 @@ export default function About() {
     <Section
       id="about"
       eyebrow="About"
-      title="I build platforms and the AI that runs on them"
-      description="Senior engineer and tech lead who turns messy, real-world requirements into reliable production systems."
+      title="From an AI workflow to a working product"
+      description="Applied AI engineering with the backend, infrastructure, and delivery experience to bring it into production."
     >
       <div className="grid lg:grid-cols-[1.6fr_1fr] gap-8 lg:gap-12 items-start">
         <FadeInWhenVisible>
@@ -41,7 +68,9 @@ export default function About() {
                     <dt className="text-xs uppercase tracking-wide text-gray-500">
                       {item.label}
                     </dt>
-                    <dd className="text-sm text-gray-200 mt-0.5">{item.value}</dd>
+                    <dd className="text-sm text-gray-200 mt-0.5">
+                      {item.value}
+                    </dd>
                   </div>
                 </div>
               ))}
