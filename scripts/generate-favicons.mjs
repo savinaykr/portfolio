@@ -1,5 +1,5 @@
 /**
- * Generates favicon and app icons from public/sharky-sark.png (brand mascot).
+ * Generates favicon and app icons from public/logo.svg (brand mark).
  * Run: node scripts/generate-favicons.mjs
  */
 import fs from "fs";
@@ -10,7 +10,7 @@ import toIco from "to-ico";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, "..");
-const sourcePath = path.join(rootDir, "public", "sharky-sark.png");
+const sourcePath = path.join(rootDir, "public", "logo.svg");
 const outDir = path.join(rootDir, "public");
 
 // flatten: iOS ignores alpha in apple-touch icons (renders black) and rounds
@@ -30,18 +30,18 @@ async function main() {
     process.exit(1);
   }
 
-  const image = sharp(sourcePath);
+  const image = sharp(sourcePath, { density: 300 });
 
   for (const { name, size, flatten } of SIZES) {
     const outPath = path.join(outDir, name);
     if (flatten) {
       // ~83% content on a solid brand background so rounded corners don't clip.
       const inner = Math.round(size * 0.83);
-      const shark = await image.clone().resize(inner, inner).png().toBuffer();
+      const mark = await image.clone().resize(inner, inner).png().toBuffer();
       await sharp({
         create: { width: size, height: size, channels: 4, background: BRAND_BG },
       })
-        .composite([{ input: shark, gravity: "center" }])
+        .composite([{ input: mark, gravity: "center" }])
         .png()
         .toFile(outPath);
     } else {
@@ -50,13 +50,13 @@ async function main() {
     console.log("Written:", name);
   }
 
-  const png16 = await sharp(sourcePath).resize(16, 16).png().toBuffer();
-  const png32 = await sharp(sourcePath).resize(32, 32).png().toBuffer();
+  const png16 = await sharp(sourcePath, { density: 300 }).resize(16, 16).png().toBuffer();
+  const png32 = await sharp(sourcePath, { density: 300 }).resize(32, 32).png().toBuffer();
   const icoBuffer = await toIco([png16, png32]);
   fs.writeFileSync(path.join(outDir, "favicon.ico"), icoBuffer);
   console.log("Written: favicon.ico");
 
-  console.log("Done. Favicons generated from sharky-sark.png.");
+  console.log("Done. Favicons generated from logo.svg.");
 }
 
 main().catch((err) => {

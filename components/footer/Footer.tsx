@@ -25,10 +25,11 @@ export default function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
               <Image
-                src="/sharky-sark.png"
-                alt="codesark shark mascot"
+                src="/logo.svg"
+                alt="Savinay Kumar brand mark"
                 width={32}
                 height={32}
+                unoptimized
                 className="size-8 object-contain"
               />
               <span className="font-mono text-sm text-gray-200">{siteData.name}</span>
