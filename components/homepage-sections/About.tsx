@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {
-  Briefcase,
   Compass,
   MapPin,
   Rocket,
@@ -12,11 +11,6 @@ import { siteData } from "@/lib/siteData";
 
 const glance = [
   {
-    icon: Briefcase,
-    label: "Currently",
-    value: "Senior AI Engineer · Commonwealth Bank of Australia",
-  },
-  {
     icon: Compass,
     label: "Focus",
     value: "Applied AI · Agents · RAG · Distributed systems",
@@ -24,7 +18,7 @@ const glance = [
   {
     icon: Rocket,
     label: "Product delivery",
-    value: "Companion lending pilot · ViHi on iOS & Android",
+    value: "Companion lending workflows · ViHi on iOS & Android",
   },
   { icon: MapPin, label: "Based in", value: "Bengaluru, India" },
   {
@@ -35,7 +29,7 @@ const glance = [
   {
     icon: Sparkles,
     label: "Leadership",
-    value: "Pod delivery · Architecture · Teams of 6+",
+    value: "Led a team of 6+ engineers at Zeliot",
   },
 ];
 
@@ -83,12 +77,6 @@ export default function About() {
               meant working on both sides of the product: the experience people
               used on their phones and the Go services, employee SSO/VPN, and
               AWS/GCP infrastructure our team needed to run it.
-            </p>
-            <p>
-              Today at <strong>Commonwealth Bank of Australia</strong>, I build
-              conversational workflows, MCP integrations, and guardrails for
-              Companion—taking AI features from design and evals through pilot
-              rollout.
             </p>
           </div>
         </div>

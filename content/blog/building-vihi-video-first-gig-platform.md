@@ -19,11 +19,11 @@ I led architecture and development across **15+ Go microservices** and **Python 
 
 ### Backend and data
 
-- **APIs and services — Go, Protobuf, ConnectRPC/gRPC:** Typed APIs and service-to-service contracts
-- **Data — PostgreSQL:** Application data and relational queries
-- **Ranking — pgvector:** Embedding-based feed ranking with a deterministic fallback
-- **Events — NATS JetStream and transactional outboxes:** Reliable service messaging
-- **AI services — Python and Gemini:** Media analysis, form autofill, and liveness checks
+- **APIs and services (Go, Protobuf, ConnectRPC/gRPC)**. Typed APIs and service-to-service contracts
+- **Data (PostgreSQL)**. Application data and relational queries
+- **Ranking (pgvector)**. Embedding-based feed ranking with a deterministic fallback
+- **Events (NATS JetStream and transactional outboxes)**. Reliable service messaging
+- **AI services (Python and Gemini)**. Media analysis, form autofill, and liveness checks
 
 A transactional outbox keeps a service's data change and the record of its intended event in the same database transaction. Publishing can then be retried independently. Consumers still need to handle duplicate delivery; the outbox does not remove that responsibility.
 

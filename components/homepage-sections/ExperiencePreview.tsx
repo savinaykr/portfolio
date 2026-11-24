@@ -56,7 +56,7 @@ export default function ExperiencePreview() {
               <p className="mt-0.5 text-sm text-primary/90">{role.role}</p>
               {role.current && (
                 <p className="mt-2 max-w-[50ch] text-sm leading-relaxed text-gray-300">
-                  I work with data scientists to build APIs and MCP integrations for AI agents.
+                  I build AI agents, from the conversations customers have with them to the tools they use behind the scenes.
                 </p>
               )}
             </li>

@@ -103,7 +103,7 @@ export function ContactCard() {
               <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
-                placeholder="What should I call you?"
+                placeholder="Your name"
                 {...register("name")}
               />
               {errors.name && (
@@ -131,7 +131,7 @@ export function ContactCard() {
               >
                 <SelectTrigger id="subject">
                   <SelectValue
-                    placeholder="What is it about?"
+                    placeholder="Select a subject"
                     {...register("subject")}
                   />
                 </SelectTrigger>
@@ -153,7 +153,7 @@ export function ContactCard() {
               <Label htmlFor="contact-message">Message</Label>
               <Textarea
                 id="contact-message"
-                placeholder="Tell me what you're working on."
+                placeholder="Briefly describe your question or proposal."
                 {...register("message")}
               />
               {errors.message && (

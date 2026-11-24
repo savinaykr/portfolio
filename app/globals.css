@@ -22,7 +22,7 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
   /* Terminal-inspired theme: no corner rounding anywhere (rounded-full is kept
-     for dots/status indicators only — it doesn't use these tokens). */
+     for dots/status indicators only because it doesn't use these tokens). */
   --radius-xs: 0;
   --radius-sm: 0;
   --radius-md: 0;
@@ -212,7 +212,7 @@ html {
   color: transparent;
 }
 
-/* Eyebrow / kicker label above section titles — terminal prompt style */
+/* Eyebrow / kicker label above section titles in the terminal prompt style */
 .eyebrow {
   font-family: var(--font-mono);
   text-transform: uppercase;
@@ -227,7 +227,7 @@ html {
 }
 
 /* Terminal-style card: sharp corners, bracket accents (top-left + bottom-right),
-   and a faint primary glow on hover. Pure CSS — safe in server components. */
+   and a faint primary glow on hover. Pure CSS, safe in server components. */
 .terminal-card {
   position: relative;
   transition: box-shadow 0.25s ease, border-color 0.25s ease;

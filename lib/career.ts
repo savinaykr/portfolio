@@ -14,7 +14,7 @@ export const roles: ExperienceRole[] = [
     role: "Senior AI Engineer · Contract",
     dates: "Aug 2026 – Present",
     current: true,
-    summary: "I work with data scientists in Business Intelligence to build APIs and Model Context Protocol (MCP) integrations for agents. I lead implementation from design and approvals through testing, deployment, and post-deployment checks. Earlier, I developed lending workflows with Product and Governance.",
+    summary: "I build AI agents and the systems they rely on. In Business Intelligence, I work with data scientists to connect agents to tools and data through APIs and the Model Context Protocol (MCP). Earlier, I built Companion’s business overdraft workflow and led the work on credit limit increases across concierge and product agents.",
   },
   {
     company: "Neosenth (Neosenth India Pvt. Ltd.)",
@@ -52,16 +52,16 @@ export const roles: ExperienceRole[] = [
 
 export const featuredWork = [
   {
-    id: "companion", label: "Companion · Commonwealth Bank of Australia", title: "Designing a multi-step application for an AI agent",
-    summary: "I built the Business Overdraft application flow for Companion, the bank’s AI agent, and helped bring it to pilot customers.",
+    id: "companion", label: "Companion · Commonwealth Bank of Australia", title: "Building an overdraft application for Companion",
+    summary: "Companion is the bank’s AI agent and is now available to customers. I built its business overdraft application workflow.",
     tools: ["Python", "Multi-agent workflows", "Guardrails"],
     story: [
       "A customer might ask an unrelated question midway through an overdraft application. I implemented the multi-step flow for Companion, including off-topic handling, disclosures, credit checks, and deterministic application data.",
-      "The overdraft flow reached selected customers in the Companion v2 pilot. For credit limit increases, I led the integration between concierge and product agents from a relevant offer or direct request through the application.",
+      "I built the overdraft flow for the earlier Companion v2 pilot. The bank has since released Companion to customers. For credit limit increases, I led the integration between concierge and product agents from a relevant offer or direct request through the application.",
     ],
   },
   {
-    id: "sml-saarthi", label: "SML Saarthi · Zeliot", title: "Scaling a vehicle telemetry pipeline",
+    id: "sml-saarthi", label: "SML Saarthi · Zeliot", title: "Why fuel-theft alerts were falling behind",
     summary: "I traced delayed alerts to repeated database reads and rebuilt how the fuel-monitoring service processed vehicle data.",
     tools: ["Kafka", "Stream processing", "Database transactions"],
     story: [
@@ -70,7 +70,7 @@ export const featuredWork = [
     ],
   },
   {
-    id: "vihi", label: "ViHi · Neosenth", title: "Building a startup’s cloud infrastructure",
+    id: "vihi", label: "ViHi · Neosenth", title: "How we ran ViHi and gave the team access",
     summary: "I built the deployment platform for our mobile marketplace and set up how employees signed in and accessed internal services.",
     tools: ["AWS", "Google Cloud", "Kubernetes", "SSO", "VPN"],
     story: [

@@ -9,7 +9,7 @@ export const siteData = {
   tagline:
     "I build AI agents and the systems that bring them into everyday products.",
   summary:
-    "Senior AI Engineer at Commonwealth Bank of Australia building customer-facing AI agents. Experience across agentic workflows, RAG, distributed systems, product engineering, and end-to-end cloud infrastructure delivery.",
+    "Savinay Kumar is a senior AI engineer in Bengaluru. His work spans AI agents, retrieval, distributed systems, and cloud infrastructure.",
   focus: "Applied AI · Agentic systems · RAG · Distributed systems",
   contactInvitation:
     "Open to conversations about AI products, engineering, and ideas worth building.",
