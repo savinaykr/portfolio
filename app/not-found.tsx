@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { siteData } from "@/lib/siteData";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -14,7 +15,7 @@ export default function NotFound() {
           <span className="size-2.5 rounded-full bg-red-500/60" />
           <span className="size-2.5 rounded-full bg-amber-500/60" />
           <span className="size-2.5 rounded-full bg-emerald-500/60" />
-          <span className="ml-3 text-[11px] text-gray-600">savinay@codesark:~</span>
+          <span className="ml-3 text-[11px] text-gray-600">me@{siteData.handle}:~</span>
         </div>
         <div className="px-6 py-8 font-mono text-sm leading-7">
           <p>

@@ -5,7 +5,7 @@ const personId = `${siteData.url}/#person`;
 const siteId = `${siteData.url}/#website`;
 
 // Person: the core entity. This is what Google's knowledge graph and LLMs read
-// to answer "who is Savinay Kumar / codesark and what does he do".
+// to answer "who is Savinay Kumar / savinaykr and what does he do".
 export function personSchema() {
   return {
     "@context": "https://schema.org",

@@ -82,7 +82,7 @@ export default function TerminalTicker() {
           <span className="size-2.5 rounded-full bg-red-500/60" />
           <span className="size-2.5 rounded-full bg-amber-500/60" />
           <span className="size-2.5 rounded-full bg-emerald-500/60" />
-          <span className="ml-3 text-[11px] text-gray-600">savinay@codesark:~</span>
+          <span className="ml-3 text-[11px] text-gray-600">me@{siteData.handle}:~</span>
         </div>
 
         {/* Fixed-height body: 6 content rows + idle prompt row, so typing never shifts layout */}

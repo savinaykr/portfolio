@@ -1,7 +1,7 @@
 // Shared public profile details for visible content, metadata, and structured data.
 export const siteData = {
   name: "Savinay Kumar",
-  handle: "codesark",
+  handle: "savinaykr",
   url: "https://savinaykumar.com",
   email: "savinaykumar@outlook.com",
   role: "Senior AI Engineer",
@@ -25,9 +25,9 @@ export const siteData = {
     { cmd: "cat ~/approach", out: "design, build, evaluate, deliver" },
   ],
   socials: {
-    x: "https://x.com/codesark",
-    linkedin: "https://www.linkedin.com/in/codesark",
-    github: "https://github.com/codesark",
+    x: "https://x.com/savinaykr",
+    linkedin: "https://www.linkedin.com/in/savinaykr",
+    github: "https://github.com/savinaykr",
   },
   knowsAbout: [
     "Applied AI",

@@ -1,6 +1,6 @@
-# CodeSark Portfolio
+# Savinay Kumar Portfolio
 
-[![Build + Push + Deploy](https://github.com/codesark/codesark-me/actions/workflows/build-push-deploy.yml/badge.svg)](https://github.com/codesark/codesark-me/actions/workflows/build-push-deploy.yml)
+[![Build + Push + Deploy](https://github.com/savinaykr/portfolio/actions/workflows/build-push-deploy.yml/badge.svg)](https://github.com/savinaykr/portfolio/actions/workflows/build-push-deploy.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38B2AC)](https://tailwindcss.com/)
@@ -60,8 +60,8 @@ A modern, responsive portfolio website showcasing my professional work and skill
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/codesark/codesark-me.git
-   cd codesark-me
+   git clone https://github.com/savinaykr/portfolio.git
+   cd portfolio
    ```
 
 2. **Install dependencies**
@@ -128,4 +128,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-© 2024 CodeSark. All rights reserved.
+© 2026 Savinay Kumar. All rights reserved.

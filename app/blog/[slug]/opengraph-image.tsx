@@ -49,7 +49,7 @@ export default async function OgImage({
             <div style={{ width: 12, height: 12, borderRadius: 9999, background: "#f59e0b99" }} />
             <div style={{ width: 12, height: 12, borderRadius: 9999, background: "#10b98199" }} />
             <div style={{ color: "#52525b", fontSize: 24, marginLeft: 12 }}>
-              savinay@codesark:~/blog
+              {`me@${siteData.handle}:~/blog`}
             </div>
           </div>
           <div style={{ display: "flex", marginTop: 56, color: "#ffe100", fontSize: 28 }}>

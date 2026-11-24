@@ -15,13 +15,13 @@ const links = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "/in/codesark",
+    value: `/in/${siteData.handle}`,
     href: siteData.socials.linkedin,
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "@codesark",
+    value: `@${siteData.handle}`,
     href: siteData.socials.github,
   },
 ];

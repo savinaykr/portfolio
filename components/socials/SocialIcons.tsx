@@ -2,22 +2,23 @@
 
 import * as React from "react";
 import { SocialIcon } from "react-social-icons";
+import { siteData } from "@/lib/siteData";
 
 const socials = [
   {
     _id: 1,
     network: "x",
-    url: "https://x.com/codesark",
+    url: siteData.socials.x,
   },
   {
     _id: 2,
     network: "linkedin",
-    url: "https://www.linkedin.com/in/codesark",
+    url: siteData.socials.linkedin,
   },
   {
     _id: 3,
     network: "github",
-    url: "https://github.com/codesark",
+    url: siteData.socials.github,
   },
 ];
 
