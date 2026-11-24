@@ -15,7 +15,7 @@ const links = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: `/in/${siteData.handle}`,
+    value: "/in/savinay-kr",
     href: siteData.socials.linkedin,
   },
   {

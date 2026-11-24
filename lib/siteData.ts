@@ -25,8 +25,8 @@ export const siteData = {
     { cmd: "cat ~/approach", out: "design, build, evaluate, deliver" },
   ],
   socials: {
-    x: "https://x.com/savinaykr",
-    linkedin: "https://www.linkedin.com/in/savinaykr",
+    x: "https://x.com/SavinayKr",
+    linkedin: "https://www.linkedin.com/in/savinay-kr",
     github: "https://github.com/savinaykr",
   },
   knowsAbout: [
