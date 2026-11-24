@@ -23,7 +23,7 @@ const links = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "/in/savinay-kr",
+    value: `/in/${siteData.handle}`,
     href: siteData.socials.linkedin,
   },
   {
@@ -35,7 +35,7 @@ const links = [
   {
     icon: XMark,
     label: "X",
-    value: "@SavinayKr",
+    value: `@${siteData.handle}`,
     href: siteData.socials.x,
   },
 ];
