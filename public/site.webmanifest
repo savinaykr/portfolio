@@ -1,7 +1,7 @@
 {
   "name": "Savinay Kumar",
   "short_name": "Savinay Kumar",
-  "description": "Senior Software Engineer & Tech Lead building backend and AI platforms on Go, Kubernetes, and Terraform.",
+  "description": "Senior AI Engineer building AI agents, RAG systems, and distributed backend platforms.",
   "icons": [
     { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }

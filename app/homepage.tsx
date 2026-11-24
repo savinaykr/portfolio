@@ -29,7 +29,7 @@ export default function Homepage(props: IHomepageProps) {
                   area: "Applied AI & agents",
                   summary: "AI agents that use tools and data.",
                   description:
-                    "I design multi-step agent workflows and build the APIs and MCP tools they use. I work with data scientists to test how agents handle decisions, handoffs and unexpected questions.",
+                    "I design multi-step agent workflows and build the APIs and MCP tools they use. I work with data scientists to test how agents handle decisions, handoffs, and unexpected questions.",
                 },
                 {
                   icon: Network,

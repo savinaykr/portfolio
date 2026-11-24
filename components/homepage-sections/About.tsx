@@ -73,10 +73,10 @@ export default function About() {
 
           <div className="mt-5 space-y-4 text-sm leading-relaxed text-gray-300 sm:text-base sm:leading-7 [&_strong]:font-medium [&_strong]:text-gray-100">
             <p>
-              I’m based in Bengaluru. While studying computer science at{" "}
-              <strong>IIIT Una</strong>, I co-founded{" "}
-              <strong>Career Capsule</strong> and built a live classroom that
-              could bring more than 100 students into a single session.
+              While studying computer science at <strong>IIIT Una</strong>, I
+              co-founded <strong>Career Capsule</strong> and built a live
+              classroom that brought more than 100 students into a single
+              session.
             </p>
             <p>
               At <strong>Neosenth</strong>, launching ViHi on iOS and Android

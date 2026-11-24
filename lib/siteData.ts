@@ -12,7 +12,7 @@ export const siteData = {
     "Senior AI Engineer at Commonwealth Bank of Australia building customer-facing AI agents. Experience across agentic workflows, RAG, distributed systems, product engineering, and end-to-end cloud infrastructure delivery.",
   focus: "Applied AI · Agentic systems · RAG · Distributed systems",
   contactInvitation:
-    "Let's connect about AI products, engineering, and ideas worth building.",
+    "Open to conversations about AI products, engineering, and ideas worth building.",
   ogImage: "/opengraph-image",
   profileImage: "/profile-pic.png",
   worksFor: {

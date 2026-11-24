@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Mail, Linkedin, Github } from "lucide-react";
 import Section from "@/components/shared/Section";
-import FadeInWhenVisible from "../animation/FadeInWhenVisible";
 import ContactCard from "../about/ContactCard";
 import { siteData } from "@/lib/siteData";
 
@@ -49,39 +48,35 @@ export default function Contact() {
       description={siteData.contactInvitation}
     >
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-        <FadeInWhenVisible>
-          <div className="space-y-3">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target={l.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={
-                  l.href.startsWith("mailto:")
-                    ? undefined
-                    : "noopener noreferrer"
-                }
-                className="terminal-card flex items-center gap-4 rounded-xl border border-slate-800 bg-foreground/[0.02] p-4 hover:border-primary/40 hover:bg-foreground/[0.04] transition-colors"
-              >
-                <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
-                  <l.icon className="size-5" aria-hidden />
+        <div className="space-y-3">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={
+                l.href.startsWith("mailto:")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
+              className="terminal-card flex items-center gap-4 rounded-xl border border-slate-800 bg-foreground/[0.02] p-4 hover:border-primary/40 hover:bg-foreground/[0.04] transition-colors"
+            >
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
+                <l.icon className="size-5" aria-hidden />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-xs uppercase tracking-wide text-gray-500">
+                  {l.label}
                 </span>
-                <span className="min-w-0">
-                  <span className="block text-xs uppercase tracking-wide text-gray-500">
-                    {l.label}
-                  </span>
-                  <span className="block truncate text-sm text-gray-200">
-                    {l.value}
-                  </span>
+                <span className="block truncate text-sm text-gray-200">
+                  {l.value}
                 </span>
-              </a>
-            ))}
-          </div>
-        </FadeInWhenVisible>
+              </span>
+            </a>
+          ))}
+        </div>
 
-        <FadeInWhenVisible delay={0.1}>
-          <ContactCard />
-        </FadeInWhenVisible>
+        <ContactCard />
       </div>
     </Section>
   );

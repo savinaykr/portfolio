@@ -80,10 +80,10 @@ export function ContactCard() {
         message: data.message,
       });
       if (!result) {
-        setIsError("An error occured, please try again later.");
+        setIsError("An error occurred, please try again later.");
       }
     } catch {
-      setIsError("An error occured, please try again later.");
+      setIsError("An error occurred, please try again later.");
     } finally {
       setIsLoading(false);
       setIsDialogOpen(true);
@@ -93,8 +93,8 @@ export function ContactCard() {
   return (
     <Card className="terminal-card w-full">
       <CardHeader>
-        <CardTitle>Connect with me</CardTitle>
-        <CardDescription>Let&lsquo;s get in touch.</CardDescription>
+        <CardTitle>Send a message</CardTitle>
+        <CardDescription>I&rsquo;ll reply directly to your inbox.</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={onSubmit}>
@@ -114,7 +114,7 @@ export function ContactCard() {
               <Label htmlFor="contact-email">Email</Label>
               <Input
                 id="contact-email"
-                placeholder="How can I connect back?"
+                placeholder="you@example.com"
                 {...register("contact")}
               />
               {errors.contact && (
@@ -153,7 +153,7 @@ export function ContactCard() {
               <Label htmlFor="contact-message">Message</Label>
               <Textarea
                 id="contact-message"
-                placeholder="Feel free to write me."
+                placeholder="Tell me what you're working on."
                 {...register("message")}
               />
               {errors.message && (

@@ -3,11 +3,11 @@ import Image from "next/image";
 import { siteData } from "@/lib/siteData";
 
 const nav = [
-  { label: "Projects", href: "/#projects" },
+  { label: "Stories", href: "/#projects" },
   { label: "About", href: "/#about" },
   { label: "Experience", href: "/#experience" },
   { label: "Writing", href: "/#blog" },
-  { label: "Skills", href: "/#skills" },
+  { label: "Technologies", href: "/#skills" },
   { label: "Contact", href: "/#contact" },
 ];
 

@@ -69,7 +69,7 @@ export default function ThemeSelect() {
             aria-label={`${label} theme`}
             aria-pressed={active}
             onClick={() => applyTheme(value)}
-            className={`grid size-7 cursor-pointer place-items-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+            className={`grid size-7 cursor-pointer place-items-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ${
               active
                 ? "bg-primary text-primary-foreground"
                 : "text-gray-400 hover:bg-foreground/10 hover:text-foreground"

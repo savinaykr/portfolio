@@ -1,5 +1,4 @@
 import Section from "@/components/shared/Section";
-import FadeInWhenVisible from "../animation/FadeInWhenVisible";
 import SkillCard from "../skills/SkillCard";
 import SkillTagCard from "../skills/SkillTagCard";
 
@@ -13,9 +12,9 @@ export default function Skills() {
       className="bg-foreground/[0.015]"
     >
       <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-12">
-        <FadeInWhenVisible className="lg:sticky lg:top-24">
+        <div className="lg:sticky lg:top-24">
           <SkillCard />
-        </FadeInWhenVisible>
+        </div>
         <div>
           <SkillTagCard />
         </div>
