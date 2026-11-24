@@ -81,6 +81,10 @@
   --input: 240 3.7% 15.9%;
   --ring: 240 4.9% 83.9%;
   --radius: 0;
+  --icon-mono-filter: brightness(0) invert(1);
+  --icon-nextjs-filter: invert(1);
+  --icon-grpc-filter: none;
+  --icon-pastel-filter: none;
 }
 
 /* A saved preference takes precedence. Without one, CSS tracks the OS live. */
@@ -120,7 +124,27 @@
     --color-slate-800: #c7cbd0;
     --color-slate-900: #eef0f2;
     --color-emerald-300: #166747;
+    --icon-mono-filter: brightness(0) invert(0);
+    --icon-nextjs-filter: none;
+    --icon-grpc-filter: invert(1) hue-rotate(180deg);
+    --icon-pastel-filter: brightness(0.72) saturate(1.25);
   }
+}
+
+.icon-mono-adaptive {
+  filter: var(--icon-mono-filter);
+}
+
+.icon-nextjs-adaptive {
+  filter: var(--icon-nextjs-filter);
+}
+
+.icon-grpc-adaptive {
+  filter: var(--icon-grpc-filter);
+}
+
+.icon-pastel-adaptive {
+  filter: var(--icon-pastel-filter);
 }
 
 @layer base {

@@ -16,7 +16,7 @@ export default function Homepage(props: IHomepageProps) {
   return (
     <>
       <ScrollToHash />
-      <div id="hero" className="section-shell grid gap-8 pb-8 pt-24 lg:grid-cols-[1fr_1.25fr] lg:gap-24 lg:py-32">
+      <div id="hero" className="section-shell grid gap-12 pb-12 pt-32 sm:pt-36 lg:grid-cols-[1fr_1.25fr] lg:gap-24 lg:py-36">
         <Hero />
         <div className="min-w-0 space-y-7">
           <section aria-labelledby="expertise-heading">

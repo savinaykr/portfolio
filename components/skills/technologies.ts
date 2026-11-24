@@ -67,7 +67,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "OpenAI / GPT",
         image: "/logos/openai.svg",
-        imageClassName: "brightness-0 invert",
+        imageClassName: "icon-mono-adaptive",
         description:
           "GPT/OpenAI API integration in applications and enterprise agent workflows.",
       },
@@ -86,6 +86,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "Amazon Bedrock",
         image: "/logos/bedrock.svg",
+        imageClassName: "icon-pastel-adaptive",
         description:
           "Managed model access and application integration in current AI engineering work.",
       },
@@ -109,7 +110,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "Ollama",
         image: "/logos/ollama.svg",
-        imageClassName: "brightness-0 invert",
+        imageClassName: "icon-mono-adaptive",
         description:
           "Model runtime and application integration used in current AI engineering work.",
       },
@@ -151,7 +152,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "MCP",
         image: "/logos/mcp.svg",
-        imageClassName: "brightness-0 invert",
+        imageClassName: "icon-mono-adaptive",
         description:
           "MCP tools and AI coding assistants used during development.",
       },
@@ -190,6 +191,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "gRPC",
         icon: GrpcOriginal,
+        iconClassName: "icon-grpc-adaptive",
         description: "ConnectRPC/gRPC APIs and Protobuf service contracts.",
       },
       {
@@ -211,6 +213,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "Temporal",
         mono: "Tp",
+        tint: "238 75% 62%",
         description: "Durable enterprise network-automation workflows.",
       },
       {
@@ -221,7 +224,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "Kafka",
         icon: ApachekafkaOriginal,
-        iconClassName: "brightness-0 invert",
+        iconClassName: "icon-mono-adaptive",
         description: "Parallel telemetry processing and service messaging.",
       },
       {
@@ -243,7 +246,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "AWS",
         icon: AmazonwebservicesOriginalWordmark,
-        iconClassName: "brightness-0 invert",
+        iconClassName: "icon-mono-adaptive",
         description:
           "Cloud infrastructure and video processing with Lambda and MediaConvert.",
       },
@@ -298,11 +301,13 @@ export const skillGroups: SkillGroup[] = [
       {
         name: "React",
         icon: ReactOriginal,
+        iconClassName: "icon-pastel-adaptive",
         description: "Frontend application development.",
       },
       {
         name: "Next.js",
         icon: NextjsOriginal,
+        iconClassName: "icon-nextjs-adaptive",
         description: "React web applications.",
       },
       {

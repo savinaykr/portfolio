@@ -1,20 +1,25 @@
 import Section from "@/components/shared/Section";
+import FadeInWhenVisible from "../animation/FadeInWhenVisible";
+import SkillCard from "../skills/SkillCard";
+import SkillTagCard from "../skills/SkillTagCard";
 
 export default function Skills() {
   return (
-    <Section id="skills" title="Technologies">
-      <dl className="max-w-3xl divide-y divide-foreground/10 border-y border-foreground/10">
-        {[
-          ["Applied AI", "GPT, Claude, Gemini, RAG, MCP"],
-          ["Model integration", "Portkey, Amazon Bedrock, LiteLLM, vLLM, Ollama"],
-          ["Backend & data", "Python, Go, TypeScript, Kafka, PostgreSQL, Redis"],
-          ["Infrastructure", "AWS, Google Cloud, Kubernetes, Docker, Terraform"],
-        ].map(([label, values]) => (
-          <div key={label} className="grid gap-1 py-3 sm:grid-cols-[10rem_1fr]">
-            <dt className="font-medium">{label}</dt><dd className="text-gray-300">{values}</dd>
-          </div>
-        ))}
-      </dl>
+    <Section
+      id="skills"
+      eyebrow="Technologies"
+      title="What I work with"
+      description="Applied AI, supported by backend engineering and end-to-end infrastructure delivery."
+      className="bg-foreground/[0.015]"
+    >
+      <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-12">
+        <FadeInWhenVisible className="lg:sticky lg:top-24">
+          <SkillCard />
+        </FadeInWhenVisible>
+        <div>
+          <SkillTagCard />
+        </div>
+      </div>
     </Section>
   );
 }
