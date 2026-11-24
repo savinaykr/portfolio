@@ -94,18 +94,21 @@ export default async function BlogPostPage({ params }: PageProps) {
             </>
           )}
           {post.updated && (
-            <time dateTime={post.updated}>
-              Updated{" "}
-              {new Date(post.updated + "T00:00:00Z").toLocaleDateString(
-                "en-US",
-                {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                  timeZone: "UTC",
-                },
-              )}
-            </time>
+            <>
+              <time dateTime={post.updated}>
+                Updated{" "}
+                {new Date(post.updated + "T00:00:00Z").toLocaleDateString(
+                  "en-US",
+                  {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                    timeZone: "UTC",
+                  },
+                )}
+              </time>
+              <span aria-hidden>·</span>
+            </>
           )}
           <span>{siteData.name}</span>
         </div>

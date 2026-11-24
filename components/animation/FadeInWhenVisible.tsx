@@ -30,11 +30,11 @@ export default function FadeInWhenVisible({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.3, delay: Math.min(delay, 0.15), ease: "easeOut" }}
+      viewport={{ once: true, amount: "some" }}
+      transition={{ duration: 0.2, delay: Math.min(delay, 0.1), ease: "easeOut" }}
       variants={{
         visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 12 },
+        hidden: { opacity: 0, y: 6 },
       }}
       {...others}
     >

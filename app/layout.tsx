@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
+import Footer from "@/components/footer/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteData } from "@/lib/siteData";
 import { personSchema, websiteSchema, profilePageSchema } from "@/lib/jsonLd";
@@ -87,11 +88,12 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `try{const theme=localStorage.getItem("portfolio-theme");if(theme==="light"||theme==="dark")document.documentElement.dataset.theme=theme}catch{}` }} />
       </head>
       <body
-        className={`${robotoMono.variable} ${poppins.variable} ${inter.variable} font-sans min-h-screen bg-background text-foreground antialiased`}
+        className={`${robotoMono.variable} ${poppins.variable} ${inter.variable} font-sans flex min-h-screen flex-col bg-background text-foreground antialiased`}
       >
         <JsonLd data={[personSchema(), websiteSchema(), profilePageSchema()]} />
         <Navbar />
-        {children}
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );

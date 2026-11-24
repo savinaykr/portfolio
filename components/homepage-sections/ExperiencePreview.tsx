@@ -8,7 +8,7 @@ export default function ExperiencePreview() {
       <ol className="divide-y divide-foreground/10">
         {roles.slice(0, 3).map((role) => (
           <li key={role.company} className="py-4">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-4">
               <h3 className="font-display text-lg font-semibold tracking-tight">{role.shortName ?? role.company}</h3>
               <span className="text-xs text-gray-400">{role.dates}</span>
             </div>

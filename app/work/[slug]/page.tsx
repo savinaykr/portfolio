@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { featuredWork } from "@/lib/career";
 
@@ -21,7 +22,13 @@ export default async function StoryPage(props: Props) {
   const work = await getStory(props);
   return (
     <main className="mx-auto max-w-3xl px-5 py-28 lg:py-36">
-      <Link className="text-sm text-primary" href={`/#${work.id}`}>← Back to portfolio</Link>
+      <Link
+        className="inline-flex items-center gap-1.5 text-sm text-gray-400 transition-colors hover:text-primary"
+        href={`/#${work.id}`}
+      >
+        <ArrowLeft className="size-4" aria-hidden />
+        Back to portfolio
+      </Link>
       <article className="mt-12">
         <p className="text-sm text-gray-400">{work.label}</p>
         <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">{work.title}</h1>

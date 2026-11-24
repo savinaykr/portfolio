@@ -43,19 +43,19 @@ export default function BlogIndexPage() {
               href={`/blog/${post.slug}`}
               className="terminal-card group flex h-full flex-col border border-slate-800 bg-foreground/[0.02] p-6 hover:border-primary/40 transition-colors"
             >
-              {post.date && (
+              {(post.date || post.updated) && (
                 <time
-                  dateTime={post.date}
+                  dateTime={post.date || post.updated}
                   className="inline-flex items-center gap-1.5 text-xs text-gray-500"
                 >
                   <CalendarDays className="size-3.5 shrink-0" aria-hidden />
-                  {post.date
-                    ? new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })
-                    : ""}
+                  {post.date ? "" : "Updated "}
+                  {new Date((post.date || post.updated) + "T00:00:00Z").toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    timeZone: "UTC",
+                  })}
                 </time>
               )}
               <h2 className="mt-3 font-display text-lg font-semibold text-gray-100 group-hover:text-primary transition-colors">

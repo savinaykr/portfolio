@@ -111,9 +111,9 @@ export function ContactCard() {
               )}
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="contact">Email</Label>
+              <Label htmlFor="contact-email">Email</Label>
               <Input
-                id="contact"
+                id="contact-email"
                 placeholder="How can I connect back?"
                 {...register("contact")}
               />

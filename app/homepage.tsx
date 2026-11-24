@@ -5,7 +5,6 @@ import ExperiencePreview from "@/components/homepage-sections/ExperiencePreview"
 import Projects from "@/components/homepage-sections/Projects";
 import Skills from "@/components/homepage-sections/Skills";
 import Contact from "@/components/homepage-sections/Contact";
-import Footer from "@/components/footer/Footer";
 import ScrollToHash from "@/components/shared/ScrollToHash";
 import type { BlogPost } from "@/lib/blog";
 
@@ -49,7 +48,6 @@ export default function Homepage(props: IHomepageProps) {
       <Blog posts={props.posts ?? []} />
       <Skills />
       <Contact />
-      <Footer />
     </>
   );
 }

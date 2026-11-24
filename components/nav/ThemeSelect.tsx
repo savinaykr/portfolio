@@ -57,7 +57,7 @@ export default function ThemeSelect() {
     <div
       role="group"
       aria-label="Color theme"
-      className="inline-flex h-8 items-center border border-foreground/15 bg-card/80 p-0.5"
+      className="inline-flex h-8 items-center border border-foreground/20 bg-card/80 p-0.5"
     >
       {OPTIONS.map(({ value, label, Icon }) => {
         const active = theme === value;

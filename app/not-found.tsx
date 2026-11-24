@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="relative flex min-h-screen items-center justify-center px-5">
+    <main className="relative flex min-h-[calc(100vh-14rem)] items-center justify-center px-5 pt-24 pb-16">
       <div className="terminal-card w-full max-w-md border border-slate-800 bg-card">
         <div className="flex items-center gap-1.5 border-b border-slate-800/70 px-4 py-2.5 font-mono">
           <span className="size-2.5 rounded-full bg-red-500/60" />
