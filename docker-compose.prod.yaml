@@ -10,10 +10,23 @@ services:
       - proxy_net
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.codesark.rule=Host(`codesark.me`) || Host(`www.codesark.me`)"
-      - "traefik.http.services.codesark.loadbalancer.server.port=3000"
+      - "traefik.http.routers.codesark.rule=Host(`codesark.me`)"
       - "traefik.http.routers.codesark.entrypoints=websecure"
       - "traefik.http.routers.codesark.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.codesark.service=codesark"
+      - "traefik.http.routers.codesark-www.rule=Host(`www.codesark.me`)"
+      - "traefik.http.routers.codesark-www.entrypoints=websecure"
+      - "traefik.http.routers.codesark-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.codesark-www.service=codesark"
+      - "traefik.http.routers.savinay.rule=Host(`savinaykumar.com`)"
+      - "traefik.http.routers.savinay.entrypoints=websecure"
+      - "traefik.http.routers.savinay.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.savinay.service=codesark"
+      - "traefik.http.routers.savinay-www.rule=Host(`www.savinaykumar.com`)"
+      - "traefik.http.routers.savinay-www.entrypoints=websecure"
+      - "traefik.http.routers.savinay-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.savinay-www.service=codesark"
+      - "traefik.http.services.codesark.loadbalancer.server.port=3000"
     env_file:
       - .env
     environment:

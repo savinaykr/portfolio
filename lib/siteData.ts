@@ -2,8 +2,8 @@
 export const siteData = {
   name: "Savinay Kumar",
   handle: "codesark",
-  url: "https://codesark.me",
-  email: "codesark98@gmail.com",
+  url: "https://savinaykumar.com",
+  email: "savinaykumar@outlook.com",
   role: "Senior AI Engineer",
   location: "Bengaluru, India",
   tagline:
@@ -13,7 +13,6 @@ export const siteData = {
   focus: "Applied AI · Agentic systems · RAG · Distributed systems",
   contactInvitation:
     "Let's connect about AI products, engineering, and ideas worth building.",
-  resume: "/Savinay_Kumar_Resume.pdf",
   ogImage: "/opengraph-image",
   profileImage: "/profile-pic.png",
   worksFor: {
@@ -48,6 +47,7 @@ export const siteData = {
     "Ollama",
     "Embeddings",
     "AI-Assisted Development with MCP",
+    "MCP integrations for AI agents",
     "Python",
     "Go",
     "TypeScript",

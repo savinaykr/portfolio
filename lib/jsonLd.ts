@@ -54,7 +54,7 @@ export function websiteSchema() {
     "@type": "WebSite",
     "@id": siteId,
     url: siteData.url,
-    name: `${siteData.name} | ${siteData.handle}`,
+    name: siteData.name,
     description: siteData.summary,
     inLanguage: "en",
     publisher: { "@id": personId },

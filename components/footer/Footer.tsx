@@ -3,11 +3,11 @@ import Image from "next/image";
 import { siteData } from "@/lib/siteData";
 
 const nav = [
+  { label: "Projects", href: "/#projects" },
   { label: "About", href: "/#about" },
-  { label: "Selected work", href: "/#projects" },
   { label: "Experience", href: "/#experience" },
+  { label: "Writing", href: "/#blog" },
   { label: "Skills", href: "/#skills" },
-  { label: "Blog", href: "/#blog" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -31,7 +31,7 @@ export default function Footer() {
                 height={32}
                 className="size-8 object-contain"
               />
-              <span className="font-mono text-sm text-gray-200">codesark</span>
+              <span className="font-mono text-sm text-gray-200">{siteData.name}</span>
             </div>
             <p className="mt-4 text-sm text-gray-500 leading-relaxed">
               {siteData.tagline} Based in {siteData.location}.

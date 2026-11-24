@@ -1,8 +1,7 @@
 import * as React from "react";
-import { FileText, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import Section from "@/components/shared/Section";
 import FadeInWhenVisible from "../animation/FadeInWhenVisible";
-import { siteData } from "@/lib/siteData";
 
 import { roles } from "@/lib/career";
 
@@ -10,9 +9,7 @@ export default function Experience() {
   return (
     <Section
       id="experience"
-      eyebrow="Experience"
-      title="Where I've worked"
-      description="From co-founding in 2019 to senior engineering and technical-lead roles across startups and enterprise."
+      title="Experience"
     >
       <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-start">
         <ol className="relative border-l border-slate-800 ml-2">
@@ -40,31 +37,15 @@ export default function Experience() {
                   </span>
                 </div>
                 <p className="mt-0.5 text-sm text-primary/90">{r.role}</p>
-                <ul className="mt-3 max-w-3xl space-y-2.5 list-disc pl-4 text-sm leading-relaxed text-gray-300 marker:text-primary/60">
-                  {r.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-                {r.tech && (
-                  <ul className="mt-2.5 flex flex-wrap gap-1.5">
-                    {r.tech.map((t) => (
-                      <li
-                        key={t}
-                        className="rounded border border-slate-800 bg-white/[0.03] px-2 py-0.5 font-mono text-[11px] text-gray-400"
-                      >
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-300">{r.summary}</p>
               </FadeInWhenVisible>
             </li>
           ))}
         </ol>
 
-        {/* Education + résumé link */}
+        {/* Education */}
         <FadeInWhenVisible delay={0.1} className="lg:w-64">
-          <div className="terminal-card rounded-2xl border border-slate-800 bg-white/[0.02] p-6">
+          <div className="terminal-card rounded-2xl border border-slate-800 bg-foreground/[0.02] p-6">
             <div className="flex items-center gap-2 text-gray-400">
               <GraduationCap className="size-4 text-primary" aria-hidden />
               <span className="text-xs uppercase tracking-wide">Education</span>
@@ -77,15 +58,6 @@ export default function Experience() {
               Aug 2017 – May 2021
             </p>
 
-            <a
-              href={siteData.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-1.5 text-sm text-gray-200 hover:text-primary transition-colors"
-            >
-              <FileText className="size-4" aria-hidden />
-              Full history (résumé)
-            </a>
           </div>
         </FadeInWhenVisible>
       </div>

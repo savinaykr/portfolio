@@ -1,6 +1,6 @@
 {
-  "name": "Savinay Kumar | codesark",
-  "short_name": "codesark",
+  "name": "Savinay Kumar",
+  "short_name": "Savinay Kumar",
   "description": "Senior Software Engineer & Tech Lead building backend and AI platforms on Go, Kubernetes, and Terraform.",
   "icons": [
     { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },

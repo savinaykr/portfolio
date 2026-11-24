@@ -61,6 +61,6 @@ Clear contracts make it easier to evolve the mobile client, backend, and AI serv
 
 ViHi gave me responsibility across those layers: from the mobile experience and AI capabilities to the services, deployment infrastructure, and access systems behind them.
 
-You can connect with me through [codesark.me](https://codesark.me) or learn more about [Neosenth](https://neosenth.com).
+You can connect with me through [savinaykumar.com](https://savinaykumar.com) or learn more about [Neosenth](https://neosenth.com).
 
 ![Savinay Kumar at Neosenth](/savinay-wall.jpg)

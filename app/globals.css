@@ -60,6 +60,7 @@
 }
 
 :root {
+  color-scheme: dark;
   --background: 240 10% 3.9%;
   --foreground: 0 0% 98%;
   --card: 240 10% 3.9%;
@@ -82,6 +83,46 @@
   --radius: 0;
 }
 
+/* A saved preference takes precedence. Without one, CSS tracks the OS live. */
+@custom-variant light-palette {
+  &[data-theme="light"] { @slot; }
+  @media (prefers-color-scheme: light) {
+    &:not([data-theme]) { @slot; }
+  }
+}
+
+:root {
+  @variant light-palette {
+    color-scheme: light;
+    --background: 48 27% 97%;
+    --foreground: 225 14% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: var(--foreground);
+    --popover: var(--card);
+    --popover-foreground: var(--foreground);
+    --primary: 40 93% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 14% 91%;
+    --secondary-foreground: var(--foreground);
+    --muted: var(--secondary);
+    --muted-foreground: 219 11% 35%;
+    --accent: var(--secondary);
+    --accent-foreground: var(--foreground);
+    --border: 40 9% 80%;
+    --input: 40 7% 60%;
+    --ring: var(--primary);
+    --color-gray-50: #16191f;
+    --color-gray-100: #20242b;
+    --color-gray-200: #303640;
+    --color-gray-300: #424954;
+    --color-gray-400: #555e69;
+    --color-slate-700: #adb3bc;
+    --color-slate-800: #c7cbd0;
+    --color-slate-900: #eef0f2;
+    --color-emerald-300: #166747;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -102,12 +143,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: hsl(240 6% 8%);
+  background-color: hsl(var(--background));
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: hsl(240 6% 8%);
+  background-color: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
@@ -119,7 +160,7 @@
 }
 
 html {
-  scrollbar-color: hsl(var(--primary) / 0.6) hsl(240 6% 8%);
+  scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--background));
 }
 
 /* Display font for headings across the refreshed UI */
@@ -208,7 +249,7 @@ html {
 .blog-content {
   font-size: 1rem;
   line-height: 1.75;
-  color: rgb(203 213 225); /* body default: slate-300 */
+  color: var(--color-gray-300); /* body default: slate-300 */
 }
 
 .blog-content h1 {
@@ -216,7 +257,7 @@ html {
   font-weight: 700 !important;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  color: rgb(248 250 252); /* slate-50 – brightest */
+  color: var(--color-gray-50); /* slate-50 – brightest */
   line-height: 1.3;
 }
 
@@ -240,7 +281,7 @@ html {
   font-weight: 600 !important;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: rgb(226 232 240); /* slate-200 */
+  color: var(--color-gray-200); /* slate-200 */
   line-height: 1.35;
 }
 
@@ -249,7 +290,7 @@ html {
   font-weight: 500 !important;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
-  color: rgb(203 213 225); /* slate-300 */
+  color: var(--color-gray-300); /* slate-300 */
   line-height: 1.35;
 }
 
@@ -259,13 +300,13 @@ html {
   font-weight: 500 !important;
   margin-top: 1rem;
   margin-bottom: 0.25rem;
-  color: rgb(148 163 184); /* slate-400 */
+  color: var(--color-gray-400); /* slate-400 */
   line-height: 1.4;
 }
 
 .blog-content p {
   margin-bottom: 1rem;
-  color: rgb(203 213 225); /* slate-300 */
+  color: var(--color-gray-300); /* slate-300 */
 }
 
 .blog-content p:last-child {
@@ -276,7 +317,7 @@ html {
 .blog-content ol {
   margin: 1rem 0;
   padding-left: 1.5rem;
-  color: rgb(203 213 225);
+  color: var(--color-gray-300);
 }
 
 .blog-content ul {
@@ -299,8 +340,8 @@ html {
   margin: 1rem 0;
   padding: 0.5rem 0 0.5rem 1rem;
   border-left: 4px solid hsl(var(--primary) / 0.6);
-  background: rgba(30 41 59 / 0.4);
-  color: rgb(253 230 138); /* amber-200 – quote tint */
+  background: hsl(var(--secondary) / 0.65);
+  color: hsl(var(--primary)); /* amber-200 – quote tint */
   font-style: italic;
 }
 
@@ -343,12 +384,12 @@ html {
 
 .blog-content strong {
   font-weight: 600;
-  color: rgb(248 250 252); /* slate-50 – stands out from body */
+  color: var(--color-gray-50); /* slate-50 – stands out from body */
 }
 
 .blog-content em {
   font-style: italic;
-  color: rgb(226 232 240); /* slate-200 – slight emphasis */
+  color: var(--color-gray-200); /* slate-200 – slight emphasis */
 }
 
 .blog-content hr {
@@ -383,12 +424,12 @@ html {
 }
 
 .blog-content tbody td {
-  color: rgb(203 213 225);
+  color: var(--color-gray-300);
 }
 
 /* Readable secondary content and visible keyboard navigation. */
-.text-gray-500 { color: #9ca3af; }
-.text-gray-600 { color: #9ca3af; }
+.text-gray-500 { color: var(--color-gray-400); }
+.text-gray-600 { color: var(--color-gray-400); }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible,
 [role="combobox"]:focus-visible {
   outline: 2px solid hsl(var(--primary));

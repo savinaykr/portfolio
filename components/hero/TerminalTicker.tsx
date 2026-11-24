@@ -76,7 +76,7 @@ export default function TerminalTicker() {
 
       <div
         aria-hidden
-        className="border border-slate-800 bg-black/40 font-mono text-[13px] leading-6 overflow-hidden"
+        className="border border-slate-800 bg-card font-mono text-[13px] leading-6 overflow-hidden"
       >
         <div className="flex items-center gap-1.5 border-b border-slate-800/70 px-4 py-2.5">
           <span className="size-2.5 rounded-full bg-red-500/60" />

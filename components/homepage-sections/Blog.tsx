@@ -16,7 +16,7 @@ export default function Blog({ posts }: IBlogProps) {
       eyebrow="Writing"
       title="Notes from the build"
       description="Practical write-ups on backend platforms, AI in production, and scaling real systems."
-      className="bg-white/[0.015]"
+      className="bg-foreground/[0.015]"
     >
       {posts.length === 0 ? (
         <p className="text-gray-500">No posts yet. Check back soon.</p>
@@ -30,7 +30,7 @@ export default function Blog({ posts }: IBlogProps) {
             >
               <Link
                 href={`/blog/${post.slug}`}
-                className="terminal-card group flex h-full flex-col rounded-2xl border border-slate-800 bg-white/[0.02] p-6 hover:border-primary/40 transition-colors"
+                className="terminal-card group flex h-full flex-col rounded-2xl border border-slate-800 bg-foreground/[0.02] p-6 hover:border-primary/40 transition-colors"
               >
                 {post.date && (
                   <time

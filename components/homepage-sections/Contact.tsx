@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Mail, Linkedin, Github, FileText } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import Section from "@/components/shared/Section";
 import FadeInWhenVisible from "../animation/FadeInWhenVisible";
 import ContactCard from "../about/ContactCard";
@@ -24,12 +24,6 @@ const links = [
     value: "@codesark",
     href: siteData.socials.github,
   },
-  {
-    icon: FileText,
-    label: "Résumé",
-    value: "Download PDF",
-    href: siteData.resume,
-  },
 ];
 
 export default function Contact() {
@@ -53,7 +47,7 @@ export default function Contact() {
                     ? undefined
                     : "noopener noreferrer"
                 }
-                className="terminal-card flex items-center gap-4 rounded-xl border border-slate-800 bg-white/[0.02] p-4 hover:border-primary/40 hover:bg-white/[0.04] transition-colors"
+                className="terminal-card flex items-center gap-4 rounded-xl border border-slate-800 bg-foreground/[0.02] p-4 hover:border-primary/40 hover:bg-foreground/[0.04] transition-colors"
               >
                 <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
                   <l.icon className="size-5" aria-hidden />

@@ -9,7 +9,7 @@ export default function SkillTagCard() {
       {skillGroups.map((group) => (
         <div
           key={group.category}
-          className="terminal-card rounded-2xl border border-slate-800 bg-white/[0.02] p-5 hover:border-slate-700 transition-colors"
+          className="terminal-card rounded-2xl border border-slate-800 bg-foreground/[0.02] p-5 hover:border-slate-700 transition-colors"
         >
           <div className="mb-1.5 flex items-baseline justify-between gap-2">
             <h3 className="font-display text-lg font-semibold text-gray-100">
@@ -24,7 +24,7 @@ export default function SkillTagCard() {
               <li
                 key={tech.name}
                 title={tech.description}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-slate-800 bg-white/[0.03] px-2.5 py-1.5 text-sm text-gray-200 hover:border-primary/40 hover:text-gray-100 transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-slate-800 bg-foreground/[0.03] px-2.5 py-1.5 text-sm text-gray-200 hover:border-primary/40 hover:text-gray-100 transition-colors"
               >
                 <TechIcon tech={tech} size={20} />
                 {tech.name}

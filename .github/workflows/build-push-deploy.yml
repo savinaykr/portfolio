@@ -145,8 +145,8 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           SMTP_FROM_NAME: ${{ secrets.SMTP_FROM_NAME }}
           SMTP_FROM: ${{ secrets.SMTP_FROM }}
-          SMTP_TO: ${{ secrets.SMTP_TO }}
-          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://codesark.me' }}
+          SMTP_TO: savinaykumar@outlook.com
+          NEXT_PUBLIC_SITE_URL: https://savinaykumar.com
         run: |
           {
             echo "SMTP_HOST=${SMTP_HOST}"
@@ -154,10 +154,10 @@ jobs:
             echo "SMTP_SECURE=${SMTP_SECURE:-false}"
             echo "SMTP_USER=${SMTP_USER}"
             echo "SMTP_PASS=${SMTP_PASS}"
-            echo "SMTP_FROM_NAME=${SMTP_FROM_NAME:-codesark.me}"
+            echo "SMTP_FROM_NAME=${SMTP_FROM_NAME:-Savinay Kumar}"
             echo "SMTP_FROM=${SMTP_FROM}"
             echo "SMTP_TO=${SMTP_TO}"
-            echo "NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://codesark.me}"
+            echo "NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://savinaykumar.com}"
           } > /tmp/deploy.env
           base64 -w0 /tmp/deploy.env > /tmp/deploy.env.b64
           scp -P ${{ secrets.DEPLOYMENT_PORT }} /tmp/deploy.env.b64 \

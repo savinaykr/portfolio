@@ -27,12 +27,12 @@ export default function SocialIcons() {
       {socials.map((social) => (
         <div
           key={social._id}
-          className="p-1 rounded-full border border-transparent hover:border-slate-700 hover:bg-zinc-950 transition"
+          className="p-1 rounded-full border border-transparent hover:border-slate-700 hover:bg-muted transition"
         >
           <SocialIcon
             url={social.url}
             network={social.network}
-            fgColor="white"
+            fgColor="currentColor"
             bgColor="transparent"
           />
         </div>

@@ -30,7 +30,7 @@ export default function ProjectCard(props: IProjectCardProps) {
 
   return (
     <div
-      className={`terminal-card group relative flex h-full flex-col rounded-2xl border bg-white/[0.02] p-6 transition-[transform,border-color] duration-200 hover:-translate-y-1 motion-reduce:transform-none ${
+      className={`terminal-card group relative flex h-full flex-col rounded-2xl border bg-foreground/[0.02] p-6 transition-[transform,border-color] duration-200 hover:-translate-y-1 motion-reduce:transform-none ${
         highlighted
           ? "border-primary/40 hover:border-primary/70"
           : "border-slate-800 hover:border-slate-700"
@@ -90,7 +90,7 @@ export default function ProjectCard(props: IProjectCardProps) {
           return (
             <span
               key={name}
-              className="inline-flex items-center gap-1.5 rounded-md border border-slate-800 bg-white/[0.03] px-2 py-1 text-xs text-gray-400"
+              className="inline-flex items-center gap-1.5 rounded-md border border-slate-800 bg-foreground/[0.03] px-2 py-1 text-xs text-gray-400"
             >
               <TechIcon tech={tech} size={15} />
               {name}

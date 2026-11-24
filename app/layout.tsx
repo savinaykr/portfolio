@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
-import Background from "@/components/background/Background";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteData } from "@/lib/siteData";
 import { personSchema, websiteSchema, profilePageSchema } from "@/lib/jsonLd";
@@ -21,7 +20,7 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteData.url),
   manifest: "/site.webmanifest",
-  applicationName: `${siteData.name} | ${siteData.handle}`,
+  applicationName: siteData.name,
   authors: [{ name: siteData.name, url: siteData.url }],
   creator: siteData.name,
   publisher: siteData.name,
@@ -53,12 +52,12 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   title: {
-    default: `${siteData.name} | ${siteData.handle} · ${siteData.role}`,
+    default: `${siteData.name} · ${siteData.role}`,
     template: `%s | ${siteData.name}`,
   },
   description: siteData.summary,
   openGraph: {
-    title: `${siteData.name} | ${siteData.handle}`,
+    title: siteData.name,
     description: siteData.summary,
     url: siteData.url,
     siteName: siteData.name,
@@ -71,7 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@codesark",
-    title: `${siteData.name} | ${siteData.handle}`,
+    title: siteData.name,
     description: siteData.summary,
     images: [siteData.ogImage],
   },
@@ -83,12 +82,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{const theme=localStorage.getItem("portfolio-theme");if(theme==="light"||theme==="dark")document.documentElement.dataset.theme=theme}catch{}` }} />
+      </head>
       <body
         className={`${robotoMono.variable} ${poppins.variable} ${inter.variable} font-sans min-h-screen bg-background text-foreground antialiased`}
       >
         <JsonLd data={[personSchema(), websiteSchema(), profilePageSchema()]} />
-        <Background />
         <Navbar />
         {children}
       </body>

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteData } from "@/lib/siteData";
+import { featuredWork } from "@/lib/career";
 import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -25,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    { url: `${siteData.url}/experience` },
+    ...featuredWork.map(({ id }) => ({ url: `${siteData.url}/work/${id}` })),
     ...blogEntries,
   ];
 }

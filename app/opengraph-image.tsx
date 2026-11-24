@@ -69,7 +69,7 @@ export default function OpenGraphImage() {
           marginTop: 44,
         }}
       >
-        codesark.me
+        savinaykumar.com
       </div>
     </div>,
     size,

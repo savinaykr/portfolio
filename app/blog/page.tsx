@@ -41,7 +41,7 @@ export default function BlogIndexPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="terminal-card group flex h-full flex-col border border-slate-800 bg-white/[0.02] p-6 hover:border-primary/40 transition-colors"
+              className="terminal-card group flex h-full flex-col border border-slate-800 bg-foreground/[0.02] p-6 hover:border-primary/40 transition-colors"
             >
               {post.date && (
                 <time
