@@ -12,7 +12,7 @@ name: Build, Push and Deploy
 
 env:
   DOCKER_REGISTRY: docker.io
-  DOCKER_IMAGE: savinaykr/codesark-me
+  DOCKER_IMAGE: savinaykr/portfolio
   DEPLOYMENT_DIR: ~/apps/codesark-me
 
 on:
